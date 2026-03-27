@@ -2,6 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3NHNXLEW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FC3NHNXLEW');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RobEng — Английский в Roblox для детей 7-11 лет</title>
 <meta name="description" content="RobEng — школа разговорного английского внутри Roblox для детей 7-11 лет. Онлайн по всему Казахстану. Алматы, Астана.">
@@ -594,7 +602,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
       <h2 data-ru="Запишитесь на пробный урок сегодня" data-kz="Бүгін сынақ сабаққа жазылыңыз"></h2>
       <p data-ru="5 000 тг — и ваш ребёнок попробует учить английский в Roblox. Онлайн, из любой точки Казахстана. Если не понравится — вернём деньги." data-kz="5 000 тг — және балаңыз Roblox ішінде ағылшын тілін үйренуді сынайды. Ұнамаса — ақшаны қайтарамыз."></p>
       <div class="cta-btns">
-        <a href="https://wa.me/77074569118" class="btn-wa" target="_blank">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу"></span></a>
+        <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'cta_button'})">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу"></span></a>
         <button class="btn-scroll" onclick="document.getElementById('lead-form-wrap').scrollIntoView({behavior:'smooth'})">📋 <span data-ru="Оставить заявку" data-kz="Өтінім қалдыру"></span></button>
       </div>
     </div>
@@ -622,7 +630,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
   <p data-ru="© 2025 RobEng — Разговорный английский в Roblox · Алматы, Астана и по всему Казахстану" data-kz="© 2025 RobEng — Roblox ішіндегі сөйлеу ағылшыны · Алматы, Астана және бүкіл Қазақстан"></p>
 </footer>
 
-<a href="https://wa.me/77074569118" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/77074569118" class="wa-float" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'float_button'})">💬</a>
 
 <script>
 // Phone mask
@@ -680,6 +688,14 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
 
+  // GA4 — отправка формы (конверсия)
+  gtag('event', 'generate_lead', {
+    event_category: 'form',
+    event_label: 'Пробный урок',
+    value: 5000,
+    currency: 'KZT'
+  });
+
   fetch("https://flat-pond-6e68.uurraa.workers.dev/create-lead", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -688,9 +704,9 @@ async function submitForm() {
       interest: "Английский язык (RobEng / Roblox)",
       childAge: age,
       source: "roblox-landing",
-      notes: `Город: ${city}. Язык: ${currentLang.toUpperCase()}. Пробный 5000тг.`
+      notes: `Язык: ${currentLang.toUpperCase()}. Пробный 5000тг.`
     })
-  }).catch(() => {});
+  }}).catch(() => {});
 
   document.getElementById("form-content").style.display = "none";
   document.getElementById("success-msg").style.display = "block";
