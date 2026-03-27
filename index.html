@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RobEng — Английский в Roblox для детей 7-11 лет</title>
 <meta name="description" content="RobEng — школа разговорного английского внутри Roblox для детей 7-11 лет. Онлайн по всему Казахстану. Алматы, Астана.">
+<link rel="preload" href="robeng-logo.png" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --orange: #F57C00;
+  --orange: #E65100;
   --orange-light: #FF9800;
   --orange-bg: #FFF3E0;
   --green: #4CAF50;
@@ -19,7 +20,7 @@
   --green-bg: #E8F5E9;
   --dark: #1A1A2E;
   --text: #2c2c3a;
-  --text2: #5a5a72;
+  --text2: #4a4a62;
   --border: #E8E8F0;
   --bg: #FFFFFF;
   --bg2: #F8F9FF;
@@ -442,7 +443,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
 <!-- NAV -->
 <nav class="nav">
   <div class="inner">
-    <div class="nav-logo"><img width="120" height="38" width="120" height="38" src="robeng-logo.png" alt="RobEng"></div>
+    <div class="nav-logo"><img width="120" height="38" fetchpriority="high" width="120" height="38" src="robeng-logo.png" alt="RobEng"></div>
     <div class="lang-btns">
       <button class="active" onclick="setLang('ru')">RU</button>
       <button onclick="setLang('kz')">KZ</button>
@@ -451,6 +452,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
 </nav>
 
 <!-- HERO -->
+<main id="main-content">
 <section class="hero">
   <div class="inner">
     <div>
@@ -483,8 +485,8 @@ footer p { font-size: 0.78rem; color: var(--text2); }
           <input type="tel" id="f-phone" placeholder="+7 (777) 000-00-00" maxlength="18">
         </div>
         <div class="form-group">
-          <label data-ru="Возраст ребёнка" data-kz="Баланың жасы"></label>
-          <select id="f-age">
+          <label for="f-age" data-ru="Возраст ребёнка" data-kz="Баланың жасы"></label>
+          <select id="f-age" aria-label="Возраст ребёнка">
             <option value="" data-ru="Выберите возраст" data-kz="Жасты таңдаңыз">Выберите возраст</option>
             <option value="7">7 лет</option>
             <option value="8">8 лет</option>
@@ -505,6 +507,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
   </div>
 </section>
 
+</main>
 <!-- GEO STRIP -->
 <div class="geo-strip">
   <div class="inner">
