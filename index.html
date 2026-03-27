@@ -445,6 +445,19 @@ footer p { font-size: 0.78rem; color: var(--text2); }
   .geo-divider { display: none; }
 }
 </style>
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1489495452536302');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel -->
 </head>
 <body>
 
@@ -602,7 +615,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
       <h2 data-ru="Запишитесь на пробный урок сегодня" data-kz="Бүгін сынақ сабаққа жазылыңыз">Запишитесь на пробный урок сегодня</h2>
       <p data-ru="5 000 тг — и ваш ребёнок попробует учить английский в Roblox. Онлайн, из любой точки Казахстана. Если не понравится — вернём деньги." data-kz="5 000 тг — және балаңыз Roblox ішінде ағылшын тілін үйренуді сынайды. Ұнамаса — ақшаны қайтарамыз."></p>
       <div class="cta-btns">
-        <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'cta_button'})">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span></a>
+        <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'cta_button'}); if(typeof fbq!=='undefined') fbq('track','Contact');">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span></a>
         <button class="btn-scroll" onclick="document.getElementById('lead-form-wrap').scrollIntoView({behavior:'smooth'})">📋 <span data-ru="Оставить заявку" data-kz="Өтінім қалдыру">Оставить заявку</span></button>
       </div>
     </div>
@@ -630,7 +643,7 @@ footer p { font-size: 0.78rem; color: var(--text2); }
   <p data-ru="© 2025 RobEng — Разговорный английский в Roblox · Алматы, Астана и по всему Казахстану" data-kz="© 2025 RobEng — Roblox ішіндегі сөйлеу ағылшыны · Алматы, Астана және бүкіл Қазақстан">© 2025 RobEng — Разговорный английский в Roblox · Алматы, Астана и по всему Казахстану</p>
 </footer>
 
-<a href="https://wa.me/77074569118" class="wa-float" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'float_button'})">💬</a>
+<a href="https://wa.me/77074569118" class="wa-float" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'float_button'}); if(typeof fbq!=='undefined') fbq('track','Contact');">💬</a>
 
 <script>
 // Phone mask
@@ -688,8 +701,17 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
 
+  // Facebook Pixel — Lead event
+  if(typeof fbq !== 'undefined') {{
+    fbq('track', 'Lead', {{
+      content_name: 'Пробный урок RobEng',
+      currency: 'KZT',
+      value: 5000
+    }});
+  }}
+
   // GA4 — отправка формы (конверсия)
-  gtag('event', 'generate_lead', {
+  gtag('event', 'generate_lead', {{
     event_category: 'form',
     event_label: 'Пробный урок',
     value: 5000,
