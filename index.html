@@ -10,6 +10,20 @@
   gtag('js', new Date());
   gtag('config', 'G-FC3NHNXLEW');
   gtag('config', 'AW-18045729232');
+
+  // Google Ads conversion function
+  function gtag_report_conversion(url) {
+    var callback = function() {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-18045729232/AtfeCMKW-ZQcENDz75xD',
+      value: 5.0,
+      currency: 'USD',
+      event_callback: callback
+    });
+    return false;
+  }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RobEng — Английский в Roblox для детей 7-11 лет</title>
@@ -702,23 +716,18 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
 
-  // Facebook Pixel — Lead event
-  if(typeof fbq !== 'undefined') {{
-    fbq('track', 'Lead', {{
-      content_name: 'Пробный урок RobEng',
-      currency: 'KZT',
-      value: 5000
-    }});
-  }}
+  // Facebook Pixel — Lead
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'Пробный урок RobEng', currency: 'KZT', value: 5000 });
+  }
 
-  // GA4 — отправка формы (конверсия)
-  gtag('event', 'generate_lead', {{
-    event_category: 'form',
-    event_label: 'Пробный урок',
-    value: 5000,
-    currency: 'KZT'
-  });
+  // GA4 — отправка формы
+  gtag('event', 'generate_lead', { event_category: 'form', event_label: 'Пробный урок', value: 5000, currency: 'KZT' });
 
+  // Google Ads — конверсия
+  gtag_report_conversion();
+
+  // CRM
   fetch("https://flat-pond-6e68.uurraa.workers.dev/create-lead", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -729,7 +738,7 @@ async function submitForm() {
       source: "roblox-landing",
       notes: `Язык: ${currentLang.toUpperCase()}. Пробный 5000тг.`
     })
-  }}).catch(() => {});
+  }).catch(() => {});
 
   document.getElementById("form-content").style.display = "none";
   document.getElementById("success-msg").style.display = "block";
