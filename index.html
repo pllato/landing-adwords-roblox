@@ -735,8 +735,8 @@ async function submitForm() {
       name, phone,
       interest: "Английский язык (RobEng / Roblox)",
       childAge: age,
-      source: "roblox-landing",
-      notes: `Язык: ${currentLang.toUpperCase()}. Пробный 5000тг.`
+      source: getStoredUTM().utm_source || "roblox-landing",
+      notes: `Язык: ${currentLang.toUpperCase()}. Пробный 5000тг. UTM: ${JSON.stringify(getStoredUTM())}`
     })
   }).catch(() => {});
 
@@ -750,6 +750,33 @@ async function submitForm() {
   setTimeout(() => {
     window.open(`https://wa.me/77074569118?text=${encodeURIComponent(msg)}`, "_blank");
   }, 1000);
+}
+
+
+// UTM параметры — читаем из URL и сохраняем
+function getUTMParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_term: params.get('utm_term') || '',
+    utm_content: params.get('utm_content') || ''
+  };
+}
+
+// Сохраняем UTM в sessionStorage чтобы не потерять
+const utmParams = getUTMParams();
+if (utmParams.utm_source) {
+  sessionStorage.setItem('utm_data', JSON.stringify(utmParams));
+}
+
+function getStoredUTM() {
+  try {
+    return JSON.parse(sessionStorage.getItem('utm_data')) || {};
+  } catch(e) {
+    return {};
+  }
 }
 
 setLang("ru");
