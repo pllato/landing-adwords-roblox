@@ -2,7 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<!-- Google Analytics 4 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RobEng — Английский в Roblox для детей 7-11 лет</title>
+<meta name="description" content="Ребёнок играет в Roblox часами? Пусть учит английский прямо в игре. RobEng — онлайн школа для детей 7-11 лет.">
+<link rel="preload" href="robeng-logo.png" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3NHNXLEW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,551 +17,342 @@
   gtag('js', new Date());
   gtag('config', 'G-FC3NHNXLEW');
   gtag('config', 'AW-18061544039');
-
-  // Google Ads conversion function
   function gtag_report_conversion(url) {
-    var callback = function() {
-      if (typeof(url) != 'undefined') { window.location = url; }
-    };
-    gtag('event', 'conversion', {
-      send_to: 'AW-18061544039/ZF3wCLv0hJUcEOeUtaRD',
-      value: 5.0,
-      currency: 'USD',
-      event_callback: callback
-    });
+    var callback = function() { if (typeof(url) !== 'undefined') { window.location = url; } };
+    gtag('event', 'conversion', { send_to: 'AW-18061544039/ZF3wCLv0hJUcEOeUtaRD', value: 5.0, currency: 'USD', event_callback: callback });
     return false;
   }
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RobEng — Английский в Roblox для детей 7-11 лет</title>
-<meta name="description" content="RobEng — школа разговорного английского внутри Roblox для детей 7-11 лет. Онлайн по всему Казахстану. Алматы, Астана.">
-<link rel="preload" href="robeng-logo.png" as="image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1489495452536302');
+fbq('track', 'PageView');
+</script>
+
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --orange: #E65100;
   --orange-light: #FF9800;
   --orange-bg: #FFF3E0;
-  --green: #4CAF50;
-  --green-dark: #388E3C;
+  --green: #388E3C;
   --green-bg: #E8F5E9;
+  --red: #C62828;
   --dark: #1A1A2E;
   --text: #2c2c3a;
   --text2: #4a4a62;
   --border: #E8E8F0;
   --bg: #FFFFFF;
   --bg2: #F8F9FF;
-  --bg3: #F2F3FA;
-  --red: #E53935;
   --wa: #25d366;
 }
+body { font-family: "Nunito", sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Prevent FOUT/CLS */
-@font-face {
-  font-family: "Comfortaa";
-  font-display: swap;
+nav {
+  background: white; border-bottom: 1px solid var(--border);
+  padding: 12px 24px; display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
-@font-face {
-  font-family: "Nunito";
-  font-display: swap;
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-/* NAV */
-.nav {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  padding: 12px 0;
-  position: sticky; top: 0; z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.nav .inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.nav-logo img { height: 40px; width: 60px; display: block; }
-@media (max-width: 480px) { .nav-logo img { height: 30px; width: 45px; } }
+nav img { height: 36px; }
 .lang-btns button {
-  background: none;
-  border: 1.5px solid var(--border);
-  color: var(--text2);
-  padding: 5px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: "Nunito", sans-serif;
-  font-weight: 800;
-  font-size: 0.82rem;
-  transition: all 0.2s;
-  margin-left: 6px;
+  background: none; border: 1.5px solid var(--border); color: var(--text2);
+  padding: 5px 14px; border-radius: 20px; cursor: pointer;
+  font-family: "Nunito", sans-serif; font-weight: 800; font-size: 0.82rem; margin-left: 6px;
 }
-.lang-btns button.active {
-  background: var(--orange);
-  border-color: var(--orange);
-  color: white;
-}
+.lang-btns button.active { background: var(--orange); border-color: var(--orange); color: white; }
 
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, #FFFDE7 0%, #FFF8F0 40%, #F3F8FF 100%);
-  padding: 70px 0 80px;
-  position: relative;
-  overflow: hidden;
+/* PAIN HERO */
+.pain-hero {
+  background: linear-gradient(135deg, #1A1A2E 0%, #2d1b4e 100%);
+  color: white; padding: 50px 24px 60px;
+  text-align: center; position: relative; overflow: hidden;
 }
-.hero::before {
+.pain-hero::before {
   content: "";
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(245,124,0,0.08), transparent 70%);
-  border-radius: 50%;
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(230,81,0,0.15), transparent 70%);
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: -40px; left: -40px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(76,175,80,0.08), transparent 70%);
-  border-radius: 50%;
+.pain-hero .inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+.pain-badge {
+  display: inline-block;
+  background: rgba(198,40,40,0.2); border: 1px solid rgba(198,40,40,0.4);
+  color: #FF8A80; padding: 6px 16px; border-radius: 30px;
+  font-size: 0.78rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 20px;
 }
-.hero .inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
-  display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center;
-  position: relative; z-index: 2;
+.pain-hero h1 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.2; margin-bottom: 20px; color: white;
 }
+.pain-hero h1 .highlight { color: #FF9800; }
+.pain-hero .sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  line-height: 1.7; margin-bottom: 30px; max-width: 560px; margin-left: auto; margin-right: auto;
+}
+.pain-stats {
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.pain-stat { text-align: center; }
+.pain-stat .num { font-family: "Comfortaa", sans-serif; font-size: 1.8rem; color: #FF9800; font-weight: 700; }
+.pain-stat .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
 
-.badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--orange-bg);
-  border: 1.5px solid rgba(245,124,0,0.25);
-  color: var(--orange);
-  padding: 6px 16px; border-radius: 30px;
-  font-weight: 800; font-size: 0.78rem; letter-spacing: 0.5px;
-  text-transform: uppercase; margin-bottom: 18px;
+/* SOLUTION STRIP */
+.solution-strip {
+  background: linear-gradient(135deg, var(--orange), #FF6F00);
+  color: white; text-align: center; padding: 20px 24px;
 }
-.badge .dot {
-  width: 7px; height: 7px; background: var(--orange);
-  border-radius: 50%; animation: blink 1.5s ease-in-out infinite;
+.solution-strip p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 700;
 }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.solution-strip span { opacity: 0.9; font-size: 0.9rem; display: block; margin-top: 4px; }
 
-h1 {
-  font-family: "Comfortaa", "Nunito", sans-serif;
-  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
-  line-height: 1.2; margin-bottom: 18px; color: var(--dark);
-  min-height: 1em; /* prevent CLS */
-}
-h1 .acc-orange { color: var(--orange); }
-h1 .acc-green { color: var(--green-dark); }
+/* MAIN */
+.main { max-width: 1100px; margin: 0 auto; padding: 60px 24px; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: start; }
 
-.hero-sub {
-  font-size: 1.05rem; color: var(--text2);
-  line-height: 1.75; margin-bottom: 28px; max-width: 520px;
+/* BENEFITS */
+.benefits h2 { font-family: "Comfortaa", sans-serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 24px; }
+.benefit-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: white; border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 20px;
+  margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: border-color 0.2s;
 }
+.benefit-item:hover { border-color: var(--orange); }
+.benefit-icon { font-size: 2rem; flex-shrink: 0; }
+.benefit-item h3 { font-size: 0.97rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+.benefit-item p { font-size: 0.84rem; color: var(--text2); line-height: 1.6; }
 
-.hero-pills {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
+/* VS BLOCK */
+.vs-block {
+  background: var(--bg2); border-radius: 20px;
+  padding: 24px; margin-top: 30px;
 }
-.pill {
-  background: white;
-  border: 1.5px solid var(--border);
-  padding: 6px 14px; border-radius: 20px;
-  font-size: 0.83rem; font-weight: 700; color: var(--text);
-  display: flex; align-items: center; gap: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.pill.green { border-color: rgba(76,175,80,0.3); background: var(--green-bg); color: var(--green-dark); }
-.pill.orange { border-color: rgba(245,124,0,0.3); background: var(--orange-bg); color: var(--orange); }
+.vs-block h3 { font-family: "Comfortaa", sans-serif; font-size: 1rem; color: var(--dark); margin-bottom: 16px; text-align: center; }
+.vs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.vs-bad { background: #FFEBEE; border-radius: 10px; padding: 10px 12px; font-size: 0.82rem; color: #C62828; }
+.vs-good { background: var(--green-bg); border-radius: 10px; padding: 10px 12px; font-size: 0.82rem; color: var(--green); }
+.vs-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; opacity: 0.7; }
 
-/* FORM CARD */
+/* FORM */
+.form-wrap { position: sticky; top: 80px; }
+.urgency-bar {
+  background: linear-gradient(135deg, #C62828, #E65100);
+  color: white; text-align: center; padding: 10px 16px;
+  border-radius: 14px 14px 0 0; font-size: 0.88rem; font-weight: 800;
+}
 .form-card {
-  background: white;
-  border: 1.5px solid var(--border);
-  border-radius: 24px;
-  padding: 36px 32px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 4px 16px rgba(245,124,0,0.08);
-  position: relative;
+  background: white; border: 1.5px solid var(--border);
+  border-radius: 0 0 20px 20px; padding: 28px 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
-.form-card::before {
-  content: "";
-  position: absolute; top: 0; left: 24px; right: 24px; height: 4px;
-  background: linear-gradient(90deg, var(--orange), var(--green));
-  border-radius: 0 0 4px 4px;
-}
-.form-card h2 {
-  font-family: "Comfortaa", "Nunito", sans-serif;
-  font-size: 1.45rem; margin-bottom: 6px; color: var(--dark);
-}
-.price-line { font-size: 0.85rem; color: var(--text2); margin-bottom: 22px; }
-.price-line strong { color: var(--green-dark); }
-
+.form-card h2 { font-family: "Comfortaa", sans-serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 4px; }
+.form-card .sub { font-size: 0.82rem; color: var(--text2); margin-bottom: 18px; }
 .form-group { margin-bottom: 12px; }
-.form-group label {
-  display: block; font-size: 0.78rem; font-weight: 800;
-  color: var(--text2); margin-bottom: 5px;
-  text-transform: uppercase; letter-spacing: 0.5px;
-}
+.form-group label { display: block; font-size: 0.75rem; font-weight: 800; color: var(--text2); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 .form-group input, .form-group select {
-  width: 100%; padding: 12px 16px;
+  width: 100%; padding: 12px 14px;
   background: var(--bg2); border: 1.5px solid var(--border);
   border-radius: 12px; color: var(--text);
   font-family: "Nunito", sans-serif; font-size: 0.95rem; font-weight: 600;
-  transition: border-color 0.2s; outline: none;
+  outline: none; transition: border-color 0.2s;
 }
-.form-group input:focus, .form-group select:focus {
-  border-color: var(--orange); background: white;
-}
-
-.btn-primary {
+.form-group input:focus, .form-group select:focus { border-color: var(--orange); background: white; }
+.btn-submit {
   width: 100%; padding: 15px;
   background: linear-gradient(135deg, var(--orange), var(--orange-light));
-  border: none; border-radius: 14px;
-  color: white; font-family: "Comfortaa", "Nunito", sans-serif;
-  font-size: 1.1rem; cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 6px 24px rgba(245,124,0,0.35);
-  margin-top: 8px;
+  border: none; border-radius: 14px; color: white;
+  font-family: "Comfortaa", sans-serif; font-size: 1.05rem; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(230,81,0,0.35); margin-top: 6px;
+  transition: transform 0.2s;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(245,124,0,0.45); }
-.btn-primary:active { transform: translateY(0); }
-.btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
-
-.form-note { font-size: 0.75rem; color: var(--text2); text-align: center; margin-top: 10px; }
-
-/* STATS */
-.stats-bar {
-  background: var(--dark);
-  padding: 32px 0;
+.btn-submit:hover { transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.form-note { font-size: 0.75rem; color: var(--text2); text-align: center; margin-top: 8px; }
+.proof {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green-bg); border-radius: 10px;
+  padding: 10px 12px; margin-top: 12px;
+  font-size: 0.8rem; font-weight: 700; color: var(--green);
 }
-.stats-bar .inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
-  display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
-}
-.stat { text-align: center; }
-.stat .num {
-  font-family: "Comfortaa", "Nunito", sans-serif; font-size: 2.1rem; color: var(--orange-light);
-}
-.stat .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-
-/* SECTIONS */
-section { padding: 80px 0; }
-.inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-.section-label {
-  font-size: 0.72rem; font-weight: 800; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 10px;
-}
-.section-title {
-  font-family: "Comfortaa", "Nunito", sans-serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-  line-height: 1.25; margin-bottom: 14px; color: var(--dark);
-}
-.section-sub { color: var(--text2); font-size: 1rem; line-height: 1.75; max-width: 600px; }
-
-/* PAIN */
-.pain-section { background: var(--bg2); }
-.pain-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px; margin-top: 48px;
-}
-.pain-card {
-  background: white; border: 1.5px solid var(--border);
-  border-radius: 16px; padding: 28px 24px;
-  position: relative; overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-}
-.pain-card::before {
-  content: "✕";
-  position: absolute; top: 14px; right: 16px;
-  font-size: 0.9rem; color: var(--red); font-weight: 900;
-}
-.pain-card .emoji { font-size: 2rem; margin-bottom: 14px; }
-.pain-card h3 { font-size: 0.97rem; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
-.pain-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.65; }
-
-/* STEPS */
-.steps {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px; margin-top: 48px;
-}
-.step {
-  background: white; border: 1.5px solid var(--border);
-  border-radius: 20px; padding: 30px 24px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-}
-.step:hover { transform: translateY(-4px); border-color: var(--orange); box-shadow: 0 12px 32px rgba(245,124,0,0.12); }
-.step-num {
-  font-family: "Comfortaa", "Nunito", sans-serif; font-size: 3rem;
-  color: rgba(245,124,0,0.1); position: absolute; top: 14px; right: 18px;
-}
-.step-icon { font-size: 2.2rem; margin-bottom: 16px; }
-.step h3 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--dark); }
-.step p { font-size: 0.85rem; color: var(--text2); line-height: 1.65; }
-
-/* WHY */
-.why-section { background: var(--bg2); }
-.why-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 20px; margin-top: 48px;
-}
-.why-card {
-  background: white; border: 1.5px solid var(--border);
-  border-radius: 20px; padding: 28px;
-  display: flex; gap: 18px; align-items: flex-start;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-}
-.why-icon {
-  width: 48px; height: 48px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; flex-shrink: 0;
-}
-.why-icon.o { background: var(--orange-bg); }
-.why-icon.g { background: var(--green-bg); }
-.why-card h3 { font-size: 0.97rem; font-weight: 800; margin-bottom: 6px; color: var(--dark); }
-.why-card p { font-size: 0.84rem; color: var(--text2); line-height: 1.65; }
-
-/* GEO STRIP */
-.geo-strip {
-  background: linear-gradient(135deg, var(--orange-bg), var(--green-bg));
-  border-top: 1px solid rgba(245,124,0,0.15);
-  border-bottom: 1px solid rgba(76,175,80,0.15);
-  padding: 24px 0;
-}
-.geo-strip .inner {
-  display: flex; align-items: center; justify-content: center;
-  gap: 32px; flex-wrap: wrap;
-}
-.geo-item {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 800; font-size: 0.95rem; color: var(--dark);
-}
-.geo-item .icon {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: white; display: flex; align-items: center;
-  justify-content: center; font-size: 1.1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.geo-divider { color: var(--text2); font-size: 1.2rem; }
+.success-msg { display: none; text-align: center; padding: 20px 0; }
+.success-msg .big { font-size: 3rem; margin-bottom: 8px; }
+.success-msg h3 { font-family: "Comfortaa", sans-serif; font-size: 1.3rem; color: var(--green); margin-bottom: 6px; }
+.success-msg p { font-size: 0.85rem; color: var(--text2); }
 
 /* REVIEWS */
-.reviews-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px; margin-top: 48px;
-}
-.review {
-  background: white; border: 1.5px solid var(--border);
-  border-radius: 20px; padding: 28px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-}
-.review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.avatar {
-  width: 44px; height: 44px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; font-weight: 900; flex-shrink: 0; color: white;
-}
-.a1 { background: linear-gradient(135deg, var(--orange), #FF7043); }
-.a2 { background: linear-gradient(135deg, var(--green), #00897B); }
+.reviews-section { background: var(--bg2); padding: 60px 24px; }
+.reviews-section .inner { max-width: 1100px; margin: 0 auto; }
+.reviews-section h2 { font-family: "Comfortaa", sans-serif; font-size: 1.5rem; color: var(--dark); margin-bottom: 24px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.review { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; color: white; flex-shrink: 0; }
+.a1 { background: linear-gradient(135deg, #E65100, #FF7043); }
+.a2 { background: linear-gradient(135deg, #388E3C, #00897B); }
 .a3 { background: linear-gradient(135deg, #5C6BC0, #7E57C2); }
-.review-name { font-weight: 800; font-size: 0.95rem; color: var(--dark); }
-.review-role { font-size: 0.78rem; color: var(--text2); }
-.stars { color: var(--orange); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 12px; }
-.review p { font-size: 0.87rem; color: var(--text2); line-height: 1.7; font-style: italic; }
-
-/* CTA */
-.cta-section {
-  background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
-  text-align: center; color: white;
-}
-.cta-box { max-width: 620px; margin: 0 auto; }
-.cta-box h2 {
-  font-family: "Comfortaa", "Nunito", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px;
-}
-.cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 36px; font-size: 1rem; line-height: 1.75; }
-.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn-wa {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--wa); color: white;
-  padding: 15px 28px; border-radius: 14px;
-  font-family: "Comfortaa", "Nunito", sans-serif; font-size: 1.05rem;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
-}
-.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
-.btn-scroll {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
-  color: white; padding: 15px 28px; border-radius: 14px;
-  font-family: "Comfortaa", "Nunito", sans-serif; font-size: 1.05rem;
-  cursor: pointer; transition: background 0.2s;
-}
-.btn-scroll:hover { background: rgba(255,255,255,0.18); }
+.review-name { font-weight: 800; font-size: 0.92rem; color: var(--dark); }
+.review-role { font-size: 0.75rem; color: var(--text2); }
+.stars { color: var(--orange-light); font-size: 0.85rem; margin-bottom: 8px; }
+.review p { font-size: 0.84rem; color: var(--text2); line-height: 1.7; font-style: italic; }
 
 /* FAQ */
-.faq-section { background: var(--bg2); }
-.faq-list { margin-top: 48px; max-width: 720px; }
-.faq-item {
-  background: white; border: 1.5px solid var(--border);
-  border-radius: 14px; margin-bottom: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.faq-q {
-  font-weight: 800; font-size: 0.97rem; cursor: pointer;
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 16px; user-select: none; padding: 18px 22px;
-  color: var(--dark);
-}
-.faq-q .arrow { color: var(--orange); font-size: 1.1rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-section { padding: 60px 24px; }
+.faq-section .inner { max-width: 720px; margin: 0 auto; }
+.faq-section h2 { font-family: "Comfortaa", sans-serif; font-size: 1.5rem; color: var(--dark); margin-bottom: 20px; }
+.faq-item { background: white; border: 1.5px solid var(--border); border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+.faq-q { font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; color: var(--dark); }
+.faq-q .arrow { color: var(--orange); transition: transform 0.2s; }
 .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
-.faq-a {
-  font-size: 0.87rem; color: var(--text2); line-height: 1.7;
-  max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s;
-  padding: 0 22px;
-}
-.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+.faq-a { font-size: 0.85rem; color: var(--text2); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 20px; }
+.faq-item.open .faq-a { max-height: 200px; padding: 0 20px 16px; }
 
-/* FOOTER */
-footer {
-  background: white; border-top: 1px solid var(--border);
-  padding: 32px 0; text-align: center;
+/* CTA */
+.cta-section { background: linear-gradient(135deg, #1A1A2E, #2d1b4e); color: white; text-align: center; padding: 60px 24px; }
+.cta-section h2 { font-family: "Comfortaa", sans-serif; font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 14px; }
+.cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 30px; font-size: 1rem; line-height: 1.7; max-width: 560px; margin-left: auto; margin-right: auto; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wa); color: white; padding: 15px 28px; border-radius: 14px;
+  font-family: "Comfortaa", sans-serif; font-size: 1rem; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
 }
-footer img { height: 40px; width: 60px; margin-bottom: 10px; }
-footer p { font-size: 0.78rem; color: var(--text2); }
 
-/* FLOAT WA */
+footer { background: white; border-top: 1px solid var(--border); padding: 24px; text-align: center; }
+footer img { height: 34px; margin-bottom: 8px; }
+footer p { font-size: 0.75rem; color: var(--text2); }
+
 .wa-float {
-  position: fixed; bottom: 24px; right: 24px; z-index: 99;
-  width: 56px; height: 56px; background: var(--wa);
+  position: fixed; bottom: 20px; right: 20px; z-index: 99;
+  width: 52px; height: 52px; background: var(--wa);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1.7rem; text-decoration: none;
-  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  font-size: 1.6rem; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.5);
   animation: pulse 2.5s ease-in-out infinite;
 }
-@keyframes pulse { 0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.5)} 50%{box-shadow:0 6px 40px rgba(37,211,102,0.75)} }
-
-/* SUCCESS */
-.success-msg { display: none; text-align: center; padding: 20px 0; }
-.success-msg .big { font-size: 3rem; margin-bottom: 10px; }
-.success-msg h3 { font-family: "Comfortaa", "Nunito", sans-serif; font-size: 1.4rem; color: var(--green-dark); margin-bottom: 8px; }
-.success-msg p { font-size: 0.87rem; color: var(--text2); }
-
-/* Urgency bar */
-.urgency-bar {
-  background: linear-gradient(135deg, #E53935, #FF6F00);
-  color: white; text-align: center;
-  padding: 10px 16px; border-radius: 10px;
-  font-size: 0.9rem; font-weight: 800;
-  margin-bottom: 16px;
-}
-
-/* Social proof near form */
-.form-proof {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--green-bg); border: 1px solid rgba(76,175,80,0.2);
-  border-radius: 10px; padding: 10px 14px;
-  margin-bottom: 16px; font-size: 0.82rem; font-weight: 700;
-  color: var(--green-dark);
-}
+@keyframes pulse { 0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5)} 50%{box-shadow:0 6px 36px rgba(37,211,102,0.75)} }
 
 @media (max-width: 768px) {
-  .hero .inner { 
-    grid-template-columns: 1fr; 
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-  }
-  /* Form first on mobile */
-  .hero .inner > div:first-child { order: 2; }
-  .hero .inner > div:last-child { order: 1; }
-  .form-card { padding: 28px 20px; }
-  .stats-bar .inner { justify-content: center; }
-  .geo-strip .inner { flex-direction: column; gap: 16px; }
-  .geo-divider { display: none; }
-  /* Hide some hero text on mobile to show form faster */
-  .hero-sub { font-size: 0.95rem; }
+  .main { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .form-wrap { position: static; order: -1; }
+  .urgency-bar { border-radius: 0; }
+  .form-card { border-radius: 0; border-left: none; border-right: none; padding: 24px 16px; }
+  .benefits { padding: 30px 16px; }
+  .pain-hero { padding: 36px 16px 44px; }
+  .pain-stats { gap: 20px; }
 }
 </style>
-<!-- Facebook Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1489495452536302');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></noscript>
-<!-- End Facebook Pixel -->
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="inner">
-    <div class="nav-logo"><img width="60" height="40" fetchpriority="high" src="robeng-logo.png" alt="RobEng"></div>
-    <div class="lang-btns">
-      <button class="active" onclick="setLang('ru')">RU</button>
-      <button onclick="setLang('kz')">KZ</button>
-    </div>
+<nav>
+  <img width="54" height="36" fetchpriority="high" src="robeng-logo.png" alt="RobEng">
+  <div class="lang-btns">
+    <button class="active" onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('kz')">KZ</button>
   </div>
 </nav>
 
-<!-- HERO -->
-<main id="main-content">
-<section class="hero">
+<!-- PAIN HERO -->
+<section class="pain-hero">
   <div class="inner">
-    <div>
-      <div class="badge"><span class="dot"></span> <span data-ru="Первая в Казахстане" data-kz="Қазақстандағы алғашқы">Первая в Казахстане</span></div>
-      <h1>
-        <span data-ru="Английский" data-kz="Ағылшын тілі">Английский</span><br>
-        <span class="acc-green" data-ru="прямо в Roblox" data-kz="тікелей Roblox ішінде">прямо в Roblox</span> 🎮<br>
-        <span class="acc-orange" data-ru="для детей 7–11 лет" data-kz="7–11 жас балаларға">для детей 7–11 лет</span>
-      </h1>
-      <p class="hero-sub" data-ru="Ребёнок играет в любимую игру — и учит разговорный английский. Онлайн, из любой точки Казахстана. Он сам будет просить записать его на урок." data-kz="Бала сүйікті ойынын ойнайды — және сөйлеу ағылшын тілін үйренеді. Онлайн, Қазақстанның кез келген жерінен. Ол өзі сабаққа жазылуды сұрайды.">Ребёнок играет в любимую игру — и учит разговорный английский. Онлайн, из любой точки Казахстана. Он сам будет просить записать его на урок.</p>
-      <div class="hero-pills">
-        <span class="pill orange">🎮 <span data-ru="Урок внутри игры" data-kz="Сабақ ойын ішінде">Урок внутри игры</span></span>
-        <span class="pill green">🇬🇧 <span data-ru="Разговорный English" data-kz="Сөйлеу ағылшынша">Разговорный English</span></span>
-        <span class="pill">💻 <span data-ru="Онлайн по всему Казахстану" data-kz="Бүкіл Қазақстан бойынша онлайн">Онлайн по всему Казахстану</span></span>
-        <span class="pill">👾 <span data-ru="Дети сами хотят!" data-kz="Балалар өздері қалайды!">Дети сами хотят!</span></span>
+    <div class="pain-badge">⚠️ <span data-ru="Знакомая ситуация?" data-kz="Таныс жағдай?">Знакомая ситуация?</span></div>
+    <h1>
+      <span data-ru="Ребёнок часами играет в Roblox" data-kz="Бала сағаттар бойы Roblox ойнайды">Ребёнок часами играет в Roblox</span><br>
+      <span class="highlight" data-ru="— а время уходит впустую?" data-kz="— ал уақыт бекер өтеді?">— а время уходит впустую?</span>
+    </h1>
+    <p class="sub" data-ru="Что если эти часы в Roblox превратить в уроки английского? Ребёнок будет думать что играет — а на самом деле учить разговорный English." data-kz="Roblox-тағы осы сағаттарды ағылшын сабақтарына айналдырсаңыз ше? Бала ойнап жатырмын деп ойлайды — ал шынында разговорный English үйренеді.">Что если эти часы в Roblox превратить в уроки английского? Ребёнок будет думать что играет — а на самом деле учить разговорный English.</p>
+    <div class="pain-stats">
+      <div class="pain-stat"><div class="num">200+</div><div class="lbl" data-ru="учеников" data-kz="оқушы">учеников</div></div>
+      <div class="pain-stat"><div class="num">98%</div><div class="lbl" data-ru="хотят продолжать" data-kz="жалғастырғысы келеді">хотят продолжать</div></div>
+      <div class="pain-stat"><div class="num">4</div><div class="lbl" data-ru="занятия до результата" data-kz="сабақтан кейін нәтиже">занятия до результата</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION STRIP -->
+<div class="solution-strip">
+  <p data-ru="🎮 RobEng — первая школа английского прямо внутри Roblox" data-kz="🎮 RobEng — тікелей Roblox ішіндегі алғашқы ағылшын мектебі">🎮 RobEng — первая школа английского прямо внутри Roblox</p>
+  <span data-ru="Онлайн · Алматы · Астана · Весь Казахстан · Дети 7-11 лет" data-kz="Онлайн · Алматы · Астана · Бүкіл Қазақстан · 7-11 жас балалар">Онлайн · Алматы · Астана · Весь Казахстан · Дети 7-11 лет</span>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="benefits">
+    <h2 data-ru="Как это работает?" data-kz="Бұл қалай жұмыс істейді?">Как это работает?</h2>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">🎮</div>
+      <div>
+        <h3 data-ru="Урок проходит внутри Roblox" data-kz="Сабақ Roblox ішінде өтеді">Урок проходит внутри Roblox</h3>
+        <p data-ru="Учитель заходит в игру вместе с ребёнком. Они строят, исследуют и общаются — только на английском. Ребёнок не замечает что учится." data-kz="Мұғалім баламен бірге ойынға кіреді. Олар салады, зерттейді және тек ағылшынша сөйлеседі.">Учитель заходит в игру вместе с ребёнком. Они строят, исследуют и общаются — только на английском. Ребёнок не замечает что учится.</p>
       </div>
     </div>
 
-    <!-- FORM -->
-    <div class="form-card" id="lead-form-wrap">
-  <div class="urgency-bar">
-    🔥 <span data-ru="Осталось <strong>3 места</strong> на апрель!" data-kz="Сәуірге <strong>3 орын</strong> қалды!">Осталось <strong>3 места</strong> на апрель!</span>
+    <div class="benefit-item">
+      <div class="benefit-icon">🗣️</div>
+      <div>
+        <h3 data-ru="100% разговорный English" data-kz="100% сөйлеу ағылшынша">100% разговорный English</h3>
+        <p data-ru="Никаких учебников, грамматических упражнений и зубрёжки. Только живое общение — как дети учат родной язык." data-kz="Ешқандай оқулық пен грамматика жоқ. Тек тірі қарым-қатынас — балалар ана тілін қалай үйренеді.">Никаких учебников, грамматических упражнений и зубрёжки. Только живое общение — как дети учат родной язык.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">📈</div>
+      <div>
+        <h3 data-ru="Результат уже через месяц" data-kz="Айдан кейін нәтиже">Результат уже через месяц</h3>
+        <p data-ru="После 4 занятий ребёнок говорит простыми фразами. Через месяц — уверенно общается на English в реальных ситуациях." data-kz="4 сабақтан кейін бала қарапайым сөйлемдер айтады. Айдан кейін — нақты жағдайларда сенімді сөйлеседі.">После 4 занятий ребёнок говорит простыми фразами. Через месяц — уверенно общается на English в реальных ситуациях.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">💻</div>
+      <div>
+        <h3 data-ru="Онлайн из любого города Казахстана" data-kz="Қазақстанның кез келген қаласынан онлайн">Онлайн из любого города Казахстана</h3>
+        <p data-ru="Алматы, Астана или любой другой город — всё что нужно это интернет и устройство с Roblox." data-kz="Алматы, Астана немесе кез келген қала — тек интернет пен Roblox қажет.">Алматы, Астана или любой другой город — всё что нужно это интернет и устройство с Roblox.</p>
+      </div>
+    </div>
+
+    <!-- VS BLOCK -->
+    <div class="vs-block">
+      <h3 data-ru="Обычные курсы vs RobEng" data-kz="Кәдімгі курстар vs RobEng">Обычные курсы vs RobEng</h3>
+      <div class="vs-row">
+        <div class="vs-bad"><div class="vs-label">❌ Обычно</div><span data-ru="Ребёнок не хочет идти на урок" data-kz="Бала сабаққа барғысы келмейді">Ребёнок не хочет идти на урок</span></div>
+        <div class="vs-good"><div class="vs-label">✅ RobEng</div><span data-ru="Сам просит записать на занятие" data-kz="Өзі сабаққа жазылуды сұрайды">Сам просит записать на занятие</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-bad"><div class="vs-label">❌ Обычно</div><span data-ru="Учит грамматику, не говорит" data-kz="Грамматика үйренеді, сөйлемейді">Учит грамматику, не говорит</span></div>
+        <div class="vs-good"><div class="vs-label">✅ RobEng</div><span data-ru="Говорит с первых занятий" data-kz="Алғашқы сабақтардан сөйлейді">Говорит с первых занятий</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-bad"><div class="vs-label">❌ Обычно</div><span data-ru="Через месяц всё забыто" data-kz="Айдан кейін бәрі ұмытылады">Через месяц всё забыто</span></div>
+        <div class="vs-good"><div class="vs-label">✅ RobEng</div><span data-ru="Прогресс A1→B1 за год" data-kz="Жылда A1→B1 прогресс">Прогресс A1→B1 за год</span></div>
+      </div>
+    </div>
   </div>
+
+  <!-- FORM -->
+  <div class="form-wrap">
+    <div class="urgency-bar">🔥 <span data-ru="Осталось 3 места на апрель!" data-kz="Сәуірге 3 орын қалды!">Осталось 3 места на апрель!</span></div>
+    <div class="form-card">
       <h2 data-ru="🎯 Запись на пробный урок" data-kz="🎯 Сынақ сабаққа жазылу">🎯 Запись на пробный урок</h2>
-      <p class="price-line" data-ru="Запишитесь — мы перезвоним и расскажем всё о занятиях" data-kz="Жазылыңыз — біз қоңырау шалып, сабақтар туралы айтамыз">Запишитесь — мы перезвоним и расскажем всё о занятиях</p>
+      <p class="sub" data-ru="Перезвоним в течение 30 минут" data-kz="30 минут ішінде қоңырау шаламыз">Перезвоним в течение 30 минут</p>
       <div id="form-content">
         <div class="form-group">
-          <label data-ru="Ваше имя" data-kz="Сіздің атыңыз"></label>
+          <label data-ru="Ваше имя" data-kz="Атыңыз">Ваше имя</label>
           <input type="text" id="f-name" placeholder="Анна" autocomplete="off">
         </div>
         <div class="form-group">
-          <label data-ru="Телефон (WhatsApp)" data-kz="Телефон (WhatsApp)"></label>
+          <label data-ru="Телефон (WhatsApp)" data-kz="Телефон (WhatsApp)">Телефон (WhatsApp)</label>
           <input type="tel" id="f-phone" placeholder="+7 (777) 000-00-00" maxlength="18">
         </div>
         <div class="form-group">
           <label for="f-age" data-ru="Возраст ребёнка" data-kz="Баланың жасы">Возраст ребёнка</label>
           <select id="f-age" aria-label="Возраст ребёнка">
-            <option value="" data-ru="Выберите возраст" data-kz="Жасты таңдаңыз">Выберите возраст</option>
+            <option value="">Выберите возраст</option>
             <option value="7">7 лет</option>
             <option value="8">8 лет</option>
             <option value="9">9 лет</option>
@@ -562,110 +360,40 @@ src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></
             <option value="11">11 лет</option>
           </select>
         </div>
-        <button class="btn-primary" id="submit-btn" onclick="submitForm()" data-ru="🎮 Записаться на пробный урок →" data-kz="🎮 Сынақ сабаққа жазылу →">🎮 Записаться на пробный урок →</button>
-        <p class="form-note" data-ru="Мы перезвоним в течение 30 минут" data-kz="Біз 30 минут ішінде қоңырау шаламыз">Мы перезвоним в течение 30 минут</p>
-        <div class="form-proof">
-          ✅ <span data-ru="200+ учеников уже занимаются · Пробный урок без риска" data-kz="200+ оқушы оқып жатыр · Тәуекелсіз сынақ сабақ">200+ учеников уже занимаются · Пробный урок без риска</span>
-        </div>
+        <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+          🎮 <span data-ru="Записаться на пробный урок →" data-kz="Сынақ сабаққа жазылу →">Записаться на пробный урок →</span>
+        </button>
+        <p class="form-note" data-ru="Пробный урок · 5 000 тг · Без обязательств" data-kz="Сынақ сабақ · 5 000 тг · Міндеттемесіз">Пробный урок · 5 000 тг · Без обязательств</p>
+        <div class="proof">✅ <span data-ru="200+ учеников по Казахстану · Курс от 39 000 тг/мес" data-kz="200+ оқушы · Курс 39 000 тг/айдан">200+ учеников по Казахстану · Курс от 39 000 тг/мес</span></div>
       </div>
       <div class="success-msg" id="success-msg">
         <div class="big">🎉</div>
-        <h3 data-ru="Заявка принята!" data-kz="Өтінім қабылданды!"></h3>
-        <p data-ru="Свяжемся с вами через WhatsApp в течение 30 минут." data-kz="30 минут ішінде WhatsApp арқылы байланысамыз."></p>
+        <h3 data-ru="Заявка принята!" data-kz="Өтінім қабылданды!">Заявка принята!</h3>
+        <p data-ru="Свяжемся через WhatsApp в течение 30 минут." data-kz="30 минут ішінде WhatsApp арқылы байланысамыз.">Свяжемся через WhatsApp в течение 30 минут.</p>
       </div>
     </div>
   </div>
-</section>
-
-</main>
-<!-- GEO STRIP -->
-<div class="geo-strip">
-  <div class="inner">
-    <div class="geo-item"><div class="icon">🌐</div><span data-ru="Онлайн по всему Казахстану" data-kz="Бүкіл Қазақстан бойынша онлайн">Онлайн по всему Казахстану</span></div>
-    <div class="geo-divider">·</div>
-    <div class="geo-item"><div class="icon">🏙️</div><span data-ru="Алматы" data-kz="Алматы">Алматы</span></div>
-    <div class="geo-divider">·</div>
-    <div class="geo-item"><div class="icon">🏛️</div><span data-ru="Астана" data-kz="Астана">Астана</span></div>
-    <div class="geo-divider">·</div>
-    <div class="geo-item"><div class="icon">📍</div><span data-ru="И по всей стране" data-kz="Және бүкіл ел бойынша">И по всей стране</span></div>
-  </div>
 </div>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="inner">
-    <div class="stat"><div class="num">200+</div><div class="lbl" data-ru="Учеников" data-kz="Оқушы">Учеников</div></div>
-    <div class="stat"><div class="num">2 года</div><div class="lbl" data-ru="На рынке" data-kz="Нарықта">На рынке</div></div>
-    <div class="stat"><div class="num">98%</div><div class="lbl" data-ru="Хотят продолжать" data-kz="Жалғастырғысы келеді">Хотят продолжать</div></div>
-    <div class="stat"><div class="num">A1→B1</div><div class="lbl" data-ru="Прогресс за год" data-kz="1 жылдағы прогресс">Прогресс за год</div></div>
-  </div>
-</div>
-
-<!-- PAIN -->
-<section class="pain-section">
-  <div class="inner">
-    <p class="section-label" data-ru="Знакомо?" data-kz="Таныс па?">Знакомо?</p>
-    <h2 class="section-title" data-ru="Почему обычные курсы не работают" data-kz="Неліктен кәдімгі курстар жұмыс істемейді">Почему обычные курсы не работают</h2>
-    <div class="pain-grid">
-      <div class="pain-card"><div class="emoji">😴</div><h3 data-ru="Скучно и неинтересно" data-kz="Жалықтырушы"></h3><p data-ru="Ребёнок считает минуты до конца урока. Учёба — как наказание." data-kz="Бала сабақтың аяқталуын күтеді. Оқу жаза сияқты."></p></div>
-      <div class="pain-card"><div class="emoji">🗣️</div><h3 data-ru="Грамматика без практики" data-kz="Тәжірибесіз грамматика"></h3><p data-ru="Учат правила, но говорить стесняется. Нет живого общения на языке." data-kz="Ережелерді үйренеді, бірақ сөйлесуге ұялады."></p></div>
-      <div class="pain-card"><div class="emoji">😤</div><h3 data-ru="«Не хочу идти на урок!»" data-kz="«Барғым келмейді!»"></h3><p data-ru="Каждый раз борьба и уговоры. Деньги потрачены, мотивации нет." data-kz="Әр жолы күрес. Ақша жұмсалды, мотивация жоқ."></p></div>
-      <div class="pain-card"><div class="emoji">📚</div><h3 data-ru="Зубрёжка без смысла" data-kz="Мағынасыз жаттау"></h3><p data-ru="Слова учит для оценки. Через месяц — всё забыто." data-kz="Сөздерді баға үшін үйренеді. Бір айдан кейін бәрі ұмытылады."></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section>
-  <div class="inner">
-    <p class="section-label" data-ru="Как это работает" data-kz="Бұл қалай жұмыс істейді">Как это работает</p>
-    <h2 class="section-title" data-ru="Английский — это теперь игра" data-kz="Ағылшын тілі — енді ойын">Английский — это теперь игра</h2>
-    <p class="section-sub" data-ru="Занятия проходят онлайн прямо внутри Roblox. Учитель и ребёнок вместе строят, исследуют и общаются — только на английском." data-kz="Сабақтар онлайн, тікелей Roblox ішінде өтеді. Мұғалім мен бала бірге салады, зерттейді — тек ағылшынша."></p>
-    <div class="steps">
-      <div class="step"><div class="step-num">01</div><div class="step-icon">📞</div><h3 data-ru="Записываетесь на пробный" data-kz="Сынаққа жазыласыз"></h3><p data-ru="Оставляете заявку. Мы звоним в течение 30 минут и согласовываем удобное время." data-kz="Өтінім қалдырасыз. 30 минут ішінде қоңырау шалып, уақыт келісеміз."></p></div>
-      <div class="step"><div class="step-num">02</div><div class="step-icon">🎮</div><h3 data-ru="Заходим в Roblox" data-kz="Roblox-қа кіреміз"></h3><p data-ru="Ребёнок открывает игру на своём устройстве. Учитель уже внутри и ждёт его." data-kz="Бала өзінің құрылғысында ойынды ашады. Мұғалім ішінде күтеді."></p></div>
-      <div class="step"><div class="step-num">03</div><div class="step-icon">🗺️</div><h3 data-ru="Играем и говорим" data-kz="Ойнаймыз және сөйлесеміз"></h3><p data-ru="Строим, исследуем, выполняем квесты — всё только на английском. Ребёнок не замечает, что учится." data-kz="Саламыз, зерттейміз, тапсырмалар орындаймыз — бәрі тек ағылшынша."></p></div>
-      <div class="step"><div class="step-num">04</div><div class="step-icon">📈</div><h3 data-ru="Результат уже через месяц" data-kz="Айдан кейін нәтиже"></h3><p data-ru="После 4 занятий ребёнок говорит простыми фразами. Через месяц — уверенно общается." data-kz="4 сабақтан кейін бала қарапайым сөйлемдер айтады."></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why-section">
-  <div class="inner">
-    <p class="section-label" data-ru="Наши преимущества" data-kz="Біздің артықшылықтарымыз">Наши преимущества</p>
-    <h2 class="section-title" data-ru="Почему родители выбирают RobEng" data-kz="Неліктен ата-аналар RobEng таңдайды">Почему родители выбирают RobEng</h2>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-icon o">🎮</div><div><h3 data-ru="Единственные в Казахстане" data-kz="Қазақстанда жалғыз"></h3><p data-ru="Первая школа английского, где уроки проходят прямо в Roblox. Уникальный формат — аналогов нет." data-kz="Roblox ішінде сабақ өтетін алғашқы ағылшын мектебі. Бірегей формат."></p></div></div>
-      <div class="why-card"><div class="why-icon g">🗣️</div><div><h3 data-ru="100% разговорный формат" data-kz="100% сөйлеу форматы"></h3><p data-ru="Никаких учебников и зубрёжки. Только живое общение и настоящий разговорный английский." data-kz="Ешқандай оқулық пен жаттамау. Тек тірі қарым-қатынас."></p></div></div>
-      <div class="why-card"><div class="why-icon o">💻</div><div><h3 data-ru="Онлайн из любой точки страны" data-kz="Ел бойынша кез келген жерден онлайн"></h3><p data-ru="Занятия онлайн — из Алматы, Астаны или любого другого города Казахстана. Только нужен интернет и Roblox." data-kz="Алматыдан, Астанадан немесе Қазақстанның кез келген қаласынан онлайн. Тек интернет пен Roblox қажет."></p></div></div>
-      <div class="why-card"><div class="why-icon g">📊</div><div><h3 data-ru="Измеримый прогресс" data-kz="Өлшемді прогресс"></h3><p data-ru="Ежемесячный отчёт о прогрессе. Вы видите, как растёт словарный запас и уверенность ребёнка." data-kz="Ай сайынғы прогресс есебі. Баланың сөздік қорының өсуін көресіз."></p></div></div>
-    </div>
-  </div>
-</section>
 
 <!-- REVIEWS -->
-<section>
+<section class="reviews-section">
   <div class="inner">
-    <p class="section-label" data-ru="Отзывы родителей" data-kz="Ата-аналардың пікірлері">Отзывы родителей</p>
-    <h2 class="section-title" data-ru="Что говорят наши ученики" data-kz="Оқушыларымыз не дейді">Что говорят наши ученики</h2>
+    <h2 data-ru="Что говорят родители" data-kz="Ата-аналар не дейді">Что говорят родители</h2>
     <div class="reviews-grid">
-      <div class="review"><div class="review-header"><div class="avatar a1">А</div><div><div class="review-name">Айгуль М.</div><div class="review-role" data-ru="Мама Данияра, 9 лет · Алматы" data-kz="Дәниярдың анасы, 9 жас · Алматы"></div></div></div><div class="stars">★★★★★</div><p data-ru='"Сын сам просит зайти на урок! Раньше мы воевали каждую неделю из-за английского. Теперь он сам напоминает, что сегодня Roblox с учителем."' data-kz='"Ұлым өзі сабаққа кіруді сұрайды! Бұрын ағылшын тілі үшін соғыстық. Енді ол бүгін Roblox барын өзі еске салады."'></p></div>
-      <div class="review"><div class="review-header"><div class="avatar a2">С</div><div><div class="review-name">Серик Т.</div><div class="review-role" data-ru="Папа Алины, 8 лет · Астана" data-kz="Алинаның әкесі, 8 жас · Астана"></div></div></div><div class="stars">★★★★★</div><p data-ru='"За 3 месяца дочка стала уверенно говорить простыми фразами. Смотрим мультики на английском — она переводит! Результат реальный."' data-kz='"3 айда қызым қарапайым сөйлемдермен сенімді сөйлей бастады. Ағылшын мультфильмдерін — ол аударады! Нәтиже нақты."'></p></div>
-      <div class="review"><div class="review-header"><div class="avatar a3">Н</div><div><div class="review-name">Наталья К.</div><div class="review-role" data-ru="Мама Максима, 10 лет · Алматы" data-kz="Максимнің анасы, 10 жас · Алматы"></div></div></div><div class="stars">★★★★★</div><p data-ru='"В обычной школе оценки были плохие, а теперь учитель говорит, что у него хороший уровень. Нестандартный подход — это то, что нужно."' data-kz='"Кәдімгі мектепте бағалары нашар болды, ал енді мұғалім деңгейі жақсы дейді. Стандартты емес тәсіл — қажет нәрсе."'></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="inner">
-    <div class="cta-box">
-      <h2 data-ru="Запишитесь на пробный урок сегодня" data-kz="Бүгін сынақ сабаққа жазылыңыз">Запишитесь на пробный урок сегодня</h2>
-      <p data-ru="5 000 тг — и ваш ребёнок попробует учить английский в Roblox. Онлайн, из любой точки Казахстана. Если не понравится — вернём деньги." data-kz="5 000 тг — және балаңыз Roblox ішінде ағылшын тілін үйренуді сынайды. Ұнамаса — ақшаны қайтарамыз."></p>
-      <div class="cta-btns">
-        <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'cta_button'}); if(typeof fbq!=='undefined') fbq('track','Contact');">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span></a>
-        <button class="btn-scroll" onclick="document.getElementById('lead-form-wrap').scrollIntoView({behavior:'smooth'})">📋 <span data-ru="Оставить заявку" data-kz="Өтінім қалдыру">Оставить заявку</span></button>
+      <div class="review">
+        <div class="review-header"><div class="avatar a1">А</div><div><div class="review-name">Айгуль М.</div><div class="review-role" data-ru="Мама Данияра, 9 лет · Алматы" data-kz="Дәниярдың анасы, 9 жас · Алматы">Мама Данияра, 9 лет · Алматы</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p data-ru='"Сын и так целыми днями сидел в Roblox. Теперь хотя бы с пользой — сам просит на урок, английский пошёл в гору!"' data-kz='"Ұлым бұрыннан Roblox-та отыратын. Енді пайдалы — өзі сабаққа сұрайды, ағылшыны жақсарды!"'>"Сын и так целыми днями сидел в Roblox. Теперь хотя бы с пользой — сам просит на урок, английский пошёл в гору!"</p>
+      </div>
+      <div class="review">
+        <div class="review-header"><div class="avatar a2">С</div><div><div class="review-name">Серик Т.</div><div class="review-role" data-ru="Папа Алины, 8 лет · Астана" data-kz="Алинаның әкесі, 8 жас · Астана">Папа Алины, 8 лет · Астана</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p data-ru='"Дочка отказывалась от всех курсов. RobEng — первое что она сама захотела. За 3 месяца говорит простыми фразами!"' data-kz='"Қызым барлық курстардан бас тартты. RobEng — өзі қалаған алғашқы нәрсе. 3 айда қарапайым сөйлемдер айтады!"'>"Дочка отказывалась от всех курсов. RobEng — первое что она сама захотела. За 3 месяца говорит простыми фразами!"</p>
+      </div>
+      <div class="review">
+        <div class="review-header"><div class="avatar a3">Н</div><div><div class="review-name">Наталья К.</div><div class="review-role" data-ru="Мама Максима, 10 лет · Алматы" data-kz="Максимнің анасы, 10 жас · Алматы">Мама Максима, 10 лет · Алматы</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p data-ru='"Потратила деньги на 3 разных курса — везде бросал через месяц. RobEng занимается уже полгода и сам напоминает про урок."' data-kz='"3 түрлі курсқа ақша жұмсадым — бәрін айдан кейін тастады. RobEng-де жарты жыл оқып жатыр."'>"Потратила деньги на 3 разных курса — везде бросал через месяц. RobEng занимается уже полгода и сам напоминает про урок."</p>
       </div>
     </div>
   </div>
@@ -674,28 +402,29 @@ src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></
 <!-- FAQ -->
 <section class="faq-section">
   <div class="inner">
-    <p class="section-label">FAQ</p>
-    <h2 class="section-title" data-ru="Частые вопросы" data-kz="Жиі қойылатын сұрақтар"></h2>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Нужно ли быть в Алматы или Астане?" data-kz="Алматыда немесе Астанада болу керек пе?"></span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Нет! Занятия полностью онлайн. Подключиться можно из любого города Казахстана и даже из-за рубежа. Главное — интернет и устройство с Roblox." data-kz="Жоқ! Сабақтар толығымен онлайн. Қазақстанның кез келген қаласынан, тіпті шетелден қосылуға болады."></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Нужен ли аккаунт в Roblox?" data-kz="Roblox аккаунты қажет пе?"></span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Да, нужно создать бесплатный аккаунт на roblox.com. Это занимает 5 минут. Мы помогаем на первом занятии." data-kz="Иә, roblox.com сайтында тегін аккаунт жасау керек. 5 минут алады. Алғашқы сабақта көмектесеміз."></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Сколько стоит курс после пробного?" data-kz="Сынақтан кейін курс бағасы қанша?"></span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Курс от 39 000 тг в месяц — 3 занятия в неделю по 30+ минут, ~12 уроков в месяц." data-kz="Курс айына 39 000 тг-дан — аптасына 3 сабақ, 30+ минут, айына ~12 сабақ."></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="С какого уровня можно начать?" data-kz="Қай деңгейден бастауға болады?"></span><span class="arrow">▾</span></div><div class="faq-a" data-ru="С нуля! Большинство учеников начинали без знания английского. Метод работает для любого уровня." data-kz="Нөлден! Оқушыларымыздың көпшілігі ағылшынды білмей бастады."></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Как долго длится один урок?" data-kz="Бір сабақ қанша уақыт?"></span><span class="arrow">▾</span></div><div class="faq-a" data-ru="30–50 минут. Оптимально для концентрации детей 7–11 лет. Занятия 3 раза в неделю." data-kz="30–50 минут. 7–11 жастағы балалар үшін оңтайлы. Аптасына 3 рет."></div></div>
-    </div>
+    <h2 data-ru="Частые вопросы" data-kz="Жиі қойылатын сұрақтар">Частые вопросы</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Нужно ли быть в Алматы или Астане?" data-kz="Алматыда немесе Астанада болу керек пе?">Нужно ли быть в Алматы или Астане?</span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Нет! Занятия полностью онлайн. Подключиться можно из любого города Казахстана и даже из-за рубежа." data-kz="Жоқ! Сабақтар онлайн. Қазақстанның кез келген қаласынан қосылуға болады.">Нет! Занятия полностью онлайн. Подключиться можно из любого города Казахстана.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Нужен ли аккаунт в Roblox?" data-kz="Roblox аккаунты қажет пе?">Нужен ли аккаунт в Roblox?</span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Да, нужно создать бесплатный аккаунт на roblox.com. Это занимает 5 минут. Мы помогаем на первом занятии." data-kz="Иә, тегін аккаунт керек. 5 минут алады. Алғашқы сабақта көмектесеміз.">Да, нужно создать бесплатный аккаунт на roblox.com. Это занимает 5 минут.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="Сколько стоит курс?" data-kz="Курс бағасы қанша?">Сколько стоит курс?</span><span class="arrow">▾</span></div><div class="faq-a" data-ru="Пробный урок — 5 000 тг. Курс от 39 000 тг в месяц — 3 занятия в неделю по 30+ минут." data-kz="Сынақ сабақ — 5 000 тг. Курс айына 39 000 тг-дан — аптасына 3 сабақ.">Пробный урок — 5 000 тг. Курс от 39 000 тг в месяц — 3 занятия в неделю.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-ru="С какого уровня можно начать?" data-kz="Қай деңгейден бастауға болады?">С какого уровня можно начать?</span><span class="arrow">▾</span></div><div class="faq-a" data-ru="С нуля! Большинство учеников начинали без знания английского." data-kz="Нөлден! Оқушыларымыздың көпшілігі ағылшынды білмей бастады.">С нуля! Большинство учеников начинали без знания английского.</div></div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- CTA -->
+<section class="cta-section">
+  <h2 data-ru="Пусть Roblox работает на вашего ребёнка" data-kz="Roblox балаңызға пайдалы болсын">Пусть Roblox работает на вашего ребёнка</h2>
+  <p data-ru="Запишитесь на пробный урок за 5 000 тг. Если не понравится — вернём деньги. Мы уверены в результате." data-kz="5 000 тг-ға сынақ сабаққа жазылыңыз. Ұнамаса — ақшаны қайтарамыз.">Запишитесь на пробный урок за 5 000 тг. Если не понравится — вернём деньги.</p>
+  <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="if(typeof fbq!=='undefined') fbq('track','Contact');">💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span></a>
+</section>
+
 <footer>
-  <img width="60" height="40" loading="lazy" src="robeng-logo.png" alt="RobEng">
-  <p data-ru="© 2025 RobEng — Разговорный английский в Roblox · Алматы, Астана и по всему Казахстану" data-kz="© 2025 RobEng — Roblox ішіндегі сөйлеу ағылшыны · Алматы, Астана және бүкіл Қазақстан">© 2025 RobEng — Разговорный английский в Roblox · Алматы, Астана и по всему Казахстану</p>
+  <img width="54" height="36" src="robeng-logo.png" alt="RobEng">
+  <p data-ru="© 2025 RobEng — Английский в Roblox · Алматы, Астана и по всему Казахстану" data-kz="© 2025 RobEng — Roblox-тағы ағылшын · Алматы, Астана және бүкіл Қазақстан">© 2025 RobEng — Английский в Roblox · Алматы, Астана и по всему Казахстану</p>
 </footer>
 
-<a href="https://wa.me/77074569118" class="wa-float" target="_blank" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'float_button'}); if(typeof fbq!=='undefined') fbq('track','Contact');">💬</a>
+<a href="https://wa.me/77074569118" class="wa-float" target="_blank">💬</a>
 
 <script>
-// Phone mask
 document.addEventListener("DOMContentLoaded", function() {
   const phone = document.getElementById("f-phone");
   phone.addEventListener("input", function(e) {
@@ -710,109 +439,46 @@ document.addEventListener("DOMContentLoaded", function() {
     if (val.length >= 9) result += "-" + val.slice(9, 11);
     e.target.value = result;
   });
-  phone.addEventListener("keydown", function(e) {
-    if (e.key === "Backspace" && e.target.value === "+7") e.preventDefault();
-  });
-  phone.addEventListener("focus", function() {
-    if (!this.value) this.value = "+7 ";
-  });
+  phone.addEventListener("keydown", function(e) { if (e.key === "Backspace" && e.target.value === "+7") e.preventDefault(); });
+  phone.addEventListener("focus", function() { if (!this.value) this.value = "+7 "; });
 });
 
-let currentLang = "ru";
+function getUTMParams() {
+  const params = new URLSearchParams(window.location.search);
+  return { utm_source: params.get('utm_source') || '', utm_medium: params.get('utm_medium') || '', utm_campaign: params.get('utm_campaign') || 'landing-a' };
+}
 
+let currentLang = "ru";
 function setLang(lang) {
   currentLang = lang;
-  document.querySelectorAll("[data-ru]").forEach(el => {
-    const text = el.getAttribute("data-" + lang);
-    if (text) el.innerHTML = text;
-  });
-  document.querySelectorAll(".lang-btns button").forEach((btn, i) => {
-    btn.classList.toggle("active", (i === 0 && lang === "ru") || (i === 1 && lang === "kz"));
-  });
+  document.querySelectorAll("[data-ru]").forEach(el => { const text = el.getAttribute("data-" + lang); if (text) el.innerHTML = text; });
+  document.querySelectorAll(".lang-btns button").forEach((btn, i) => { btn.classList.toggle("active", (i === 0 && lang === "ru") || (i === 1 && lang === "kz")); });
 }
-
-function toggleFaq(el) {
-  el.parentElement.classList.toggle("open");
-}
+function toggleFaq(el) { el.parentElement.classList.toggle("open"); }
 
 async function submitForm() {
   const name = document.getElementById("f-name").value.trim();
   const phone = document.getElementById("f-phone").value.trim();
   const age = document.getElementById("f-age").value;
-  const city = "";
-
-  if (!name || !phone || !age) {
-    alert(currentLang === "ru" ? "Пожалуйста, заполните все поля" : "Барлық өрістерді толтырыңыз");
-    return;
-  }
-
+  if (!name || !phone || !age) { alert(currentLang === "ru" ? "Пожалуйста, заполните все поля" : "Барлық өрістерді толтырыңыз"); return; }
   const btn = document.getElementById("submit-btn");
   btn.disabled = true;
   btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
-
-  // Facebook Pixel — Lead
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', { content_name: 'Пробный урок RobEng', currency: 'KZT', value: 5000 });
-  }
-
-  // GA4 — отправка формы
-  gtag('event', 'generate_lead', { event_category: 'form', event_label: 'Пробный урок', value: 5000, currency: 'KZT' });
-
-  // Google Ads — конверсия
+  const utm = getUTMParams();
+  if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'RobEng Landing A', currency: 'KZT', value: 5000 }); }
+  gtag('event', 'generate_lead', { event_category: 'form', event_label: 'landing-a', value: 5000, currency: 'KZT' });
   gtag_report_conversion();
-
-  // CRM
   fetch("https://flat-pond-6e68.uurraa.workers.dev/create-lead", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name, phone,
-      interest: "Английский язык (RobEng / Roblox)",
-      childAge: age,
-      source: getStoredUTM().utm_source || "roblox-landing",
-      notes: `Язык: ${currentLang.toUpperCase()}. Пробный 5000тг. UTM: ${JSON.stringify(getStoredUTM())}`
-    })
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, phone, interest: "Английский язык (RobEng / Roblox)", childAge: age, source: utm.utm_source || "landing-a", notes: `Лендинг A (через боль). Язык: ${currentLang.toUpperCase()}. UTM: ${JSON.stringify(utm)}` })
   }).catch(() => {});
-
   document.getElementById("form-content").style.display = "none";
   document.getElementById("success-msg").style.display = "block";
-
   const msg = currentLang === "ru"
-    ? `Здравствуйте! Хочу записаться на пробный урок RobEng. Имя: ${name}, возраст ребёнка: ${age} лет, город: ${city}. Телефон: ${phone}`
-    : `Сәлем! RobEng сынақ сабаққа жазылғым келеді. Аты: ${name}, баланың жасы: ${age}, қала: ${city}. Телефон: ${phone}`;
-
-  setTimeout(() => {
-    window.open(`https://wa.me/77074569118?text=${encodeURIComponent(msg)}`, "_blank");
-  }, 1000);
+    ? `Здравствуйте! Хочу записаться на пробный урок RobEng. Имя: ${name}, возраст ребёнка: ${age} лет. Телефон: ${phone}`
+    : `Сәлем! RobEng сынақ сабаққа жазылғым келеді. Аты: ${name}, баланың жасы: ${age}. Телефон: ${phone}`;
+  setTimeout(() => { window.open(`https://wa.me/77074569118?text=${encodeURIComponent(msg)}`, "_blank"); }, 1000);
 }
-
-
-// UTM параметры — читаем из URL и сохраняем
-function getUTMParams() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utm_source: params.get('utm_source') || '',
-    utm_medium: params.get('utm_medium') || '',
-    utm_campaign: params.get('utm_campaign') || '',
-    utm_term: params.get('utm_term') || '',
-    utm_content: params.get('utm_content') || ''
-  };
-}
-
-// Сохраняем UTM в sessionStorage чтобы не потерять
-const utmParams = getUTMParams();
-if (utmParams.utm_source) {
-  sessionStorage.setItem('utm_data', JSON.stringify(utmParams));
-}
-
-function getStoredUTM() {
-  try {
-    return JSON.parse(sessionStorage.getItem('utm_data')) || {};
-  } catch(e) {
-    return {};
-  }
-}
-
 setLang("ru");
 </script>
 </body>
