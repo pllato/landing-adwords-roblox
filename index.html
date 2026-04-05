@@ -452,12 +452,41 @@ footer p { font-size: 0.78rem; color: var(--text2); }
 .success-msg h3 { font-family: "Comfortaa", "Nunito", sans-serif; font-size: 1.4rem; color: var(--green-dark); margin-bottom: 8px; }
 .success-msg p { font-size: 0.87rem; color: var(--text2); }
 
+/* Urgency bar */
+.urgency-bar {
+  background: linear-gradient(135deg, #E53935, #FF6F00);
+  color: white; text-align: center;
+  padding: 10px 16px; border-radius: 12px 12px 0 0;
+  font-size: 0.9rem; font-weight: 800;
+  margin-bottom: -1px;
+  position: relative; z-index: 1;
+}
+
+/* Social proof near form */
+.form-proof {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green-bg); border: 1px solid rgba(76,175,80,0.2);
+  border-radius: 10px; padding: 10px 14px;
+  margin-bottom: 16px; font-size: 0.82rem; font-weight: 700;
+  color: var(--green-dark);
+}
+
 @media (max-width: 768px) {
-  .hero .inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero .inner { 
+    grid-template-columns: 1fr; 
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Form first on mobile */
+  .hero .inner > div:first-child { order: 2; }
+  .hero .inner > div:last-child { order: 1; }
   .form-card { padding: 28px 20px; }
   .stats-bar .inner { justify-content: center; }
   .geo-strip .inner { flex-direction: column; gap: 16px; }
   .geo-divider { display: none; }
+  /* Hide some hero text on mobile to show form faster */
+  .hero-sub { font-size: 0.95rem; }
 }
 </style>
 <!-- Facebook Pixel -->
@@ -508,7 +537,10 @@ src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></
     </div>
 
     <!-- FORM -->
-    <div class="form-card" id="lead-form-wrap">
+    <div class="urgency-bar">
+  🔥 <span data-ru="Осталось <strong>3 места</strong> на апрель!" data-kz="Сәуірге <strong>3 орын</strong> қалды!">Осталось <strong>3 места</strong> на апрель!</span>
+</div>
+<div class="form-card" id="lead-form-wrap">
       <h2 data-ru="🎯 Запись на пробный урок" data-kz="🎯 Сынақ сабаққа жазылу">🎯 Запись на пробный урок</h2>
       <p class="price-line" data-ru="Запишитесь — мы перезвоним и расскажем всё о занятиях" data-kz="Жазылыңыз — біз қоңырау шалып, сабақтар туралы айтамыз">Запишитесь — мы перезвоним и расскажем всё о занятиях</p>
       <div id="form-content">
@@ -533,6 +565,9 @@ src="https://www.facebook.com/tr?id=1489495452536302&ev=PageView&noscript=1"/></
         </div>
         <button class="btn-primary" id="submit-btn" onclick="submitForm()" data-ru="🎮 Записаться на пробный урок →" data-kz="🎮 Сынақ сабаққа жазылу →">🎮 Записаться на пробный урок →</button>
         <p class="form-note" data-ru="Мы перезвоним в течение 30 минут" data-kz="Біз 30 минут ішінде қоңырау шаламыз">Мы перезвоним в течение 30 минут</p>
+        <div class="form-proof">
+          ✅ <span data-ru="200+ учеников уже занимаются · Пробный урок без риска" data-kz="200+ оқушы оқып жатыр · Тәуекелсіз сынақ сабақ">200+ учеников уже занимаются · Пробный урок без риска</span>
+        </div>
       </div>
       <div class="success-msg" id="success-msg">
         <div class="big">🎉</div>
