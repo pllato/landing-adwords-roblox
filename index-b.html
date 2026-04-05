@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RobEng — Английский в Roblox для детей 7-11 лет</title>
+<meta name="description" content="RobEng — школа разговорного английского внутри Roblox для детей 7-11 лет. Онлайн по всему Казахстану.">
+<link rel="preload" href="robeng-logo.png" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3NHNXLEW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FC3NHNXLEW');
+  gtag('config', 'AW-18061544039');
+  function gtag_report_conversion(url) {
+    var callback = function() {
+      if (typeof(url) !== 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-18061544039/ZF3wCLv0hJUcEOeUtaRD',
+      value: 5.0, currency: 'USD', event_callback: callback
+    });
+    return false;
+  }
+</script>
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1489495452536302');
+fbq('track', 'PageView');
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --orange: #E65100;
+  --orange-light: #FF9800;
+  --green: #388E3C;
+  --green-bg: #E8F5E9;
+  --dark: #1A1A2E;
+  --text: #2c2c3a;
+  --text2: #4a4a62;
+  --border: #E8E8F0;
+  --bg: #FFFDE7;
+  --wa: #25d366;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+nav img { height: 34px; width: auto; }
+.lang-btns button {
+  background: none; border: 1.5px solid var(--border);
+  color: var(--text2); padding: 4px 12px; border-radius: 20px;
+  cursor: pointer; font-family: "Nunito", sans-serif;
+  font-weight: 800; font-size: 0.8rem; margin-left: 6px;
+}
+.lang-btns button.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+/* MAIN LAYOUT */
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+/* HEADLINE */
+.headline {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.headline h1 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.headline h1 .g { color: var(--green); }
+.headline h1 .o { color: var(--orange); }
+.headline p {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+/* FORM CARD */
+.form-wrap {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.urgency {
+  background: linear-gradient(135deg, #E53935, #FF6F00);
+  color: white; text-align: center;
+  padding: 10px; font-size: 0.9rem; font-weight: 800;
+}
+.form-inner { padding: 24px 20px; }
+.form-inner h2 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1.3rem; color: var(--dark);
+  margin-bottom: 4px;
+}
+.form-inner p { font-size: 0.82rem; color: var(--text2); margin-bottom: 18px; }
+
+.form-group { margin-bottom: 12px; }
+.form-group label {
+  display: block; font-size: 0.75rem; font-weight: 800;
+  color: var(--text2); margin-bottom: 4px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.form-group input, .form-group select {
+  width: 100%; padding: 13px 14px;
+  background: #F8F9FF; border: 1.5px solid var(--border);
+  border-radius: 12px; color: var(--text);
+  font-family: "Nunito", sans-serif; font-size: 0.95rem; font-weight: 600;
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--orange); }
+
+.btn-submit {
+  width: 100%; padding: 16px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  border: none; border-radius: 14px;
+  color: white; font-family: "Comfortaa", sans-serif;
+  font-size: 1.1rem; cursor: pointer; margin-top: 6px;
+  box-shadow: 0 6px 20px rgba(230,81,0,0.35);
+  transition: transform 0.2s;
+}
+.btn-submit:hover { transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.7; }
+
+.form-note { font-size: 0.75rem; color: var(--text2); text-align: center; margin-top: 8px; }
+.proof {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green-bg); border-radius: 10px;
+  padding: 10px 12px; margin-top: 12px;
+  font-size: 0.8rem; font-weight: 700; color: var(--green);
+}
+
+/* WHY LIST */
+.why-list {
+  background: white; border-radius: 16px;
+  padding: 20px; margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.why-list h3 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1rem; color: var(--dark);
+  margin-bottom: 14px; text-align: center;
+}
+.why-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-bottom: 12px; font-size: 0.87rem; line-height: 1.5;
+}
+.why-item .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.why-item strong { color: var(--dark); }
+.why-item span { color: var(--text2); }
+
+/* REVIEWS */
+.reviews { margin-bottom: 20px; }
+.review {
+  background: white; border-radius: 14px;
+  padding: 16px; margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.review-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 900; color: white; flex-shrink: 0;
+}
+.a1 { background: linear-gradient(135deg, #E65100, #FF7043); }
+.a2 { background: linear-gradient(135deg, #388E3C, #00897B); }
+.review-name { font-weight: 800; font-size: 0.9rem; color: var(--dark); }
+.review-city { font-size: 0.75rem; color: var(--text2); }
+.stars { color: var(--orange-light); font-size: 0.85rem; margin-bottom: 6px; }
+.review p { font-size: 0.83rem; color: var(--text2); line-height: 1.6; font-style: italic; }
+
+/* WA BUTTON */
+.wa-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--wa); color: white;
+  padding: 15px; border-radius: 14px;
+  text-decoration: none; font-family: "Comfortaa", sans-serif;
+  font-size: 1rem; font-weight: 700; margin-bottom: 12px;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+}
+
+/* FLOAT WA */
+.wa-float {
+  position: fixed; bottom: 20px; right: 20px; z-index: 99;
+  width: 52px; height: 52px; background: var(--wa);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+}
+
+/* SUCCESS */
+.success-msg { display: none; text-align: center; padding: 20px 0; }
+.success-msg .big { font-size: 3rem; margin-bottom: 8px; }
+.success-msg h3 { font-family: "Comfortaa", sans-serif; font-size: 1.3rem; color: var(--green); margin-bottom: 6px; }
+.success-msg p { font-size: 0.85rem; color: var(--text2); }
+</style>
+</head>
+<body>
+
+<nav>
+  <img width="51" height="34" fetchpriority="high" src="robeng-logo.png" alt="RobEng">
+  <div class="lang-btns">
+    <button class="active" onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('kz')">KZ</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HEADLINE -->
+  <div class="headline">
+    <h1>
+      <span data-ru="Английский" data-kz="Ағылшын тілі">Английский</span>
+      <span class="g" data-ru="в Roblox" data-kz="Roblox-та">в Roblox</span> 🎮<br>
+      <span class="o" data-ru="для детей 7–11 лет" data-kz="7–11 жас балаларға">для детей 7–11 лет</span>
+    </h1>
+    <p data-ru="Ребёнок думает что играет — а учит разговорный English. Онлайн из любой точки Казахстана." data-kz="Бала ойнап жатырмын деп ойлайды — ал ағылшын тілін үйренеді. Онлайн, кез келген жерден.">Ребёнок думает что играет — а учит разговорный English. Онлайн из любой точки Казахстана.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-wrap">
+    <div class="urgency">🔥 <span data-ru="Осталось 3 места на апрель!" data-kz="Сәуірге 3 орын қалды!">Осталось 3 места на апрель!</span></div>
+    <div class="form-inner">
+      <h2 data-ru="🎯 Запись на пробный урок" data-kz="🎯 Сынақ сабаққа жазылу">🎯 Запись на пробный урок</h2>
+      <p data-ru="Перезвоним в течение 30 минут" data-kz="30 минут ішінде қоңырау шаламыз">Перезвоним в течение 30 минут</p>
+
+      <div id="form-content">
+        <div class="form-group">
+          <label data-ru="Ваше имя" data-kz="Атыңыз">Ваше имя</label>
+          <input type="text" id="f-name" placeholder="Анна" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label data-ru="Телефон (WhatsApp)" data-kz="Телефон (WhatsApp)">Телефон (WhatsApp)</label>
+          <input type="tel" id="f-phone" placeholder="+7 (777) 000-00-00" maxlength="18">
+        </div>
+        <div class="form-group">
+          <label for="f-age" data-ru="Возраст ребёнка" data-kz="Баланың жасы">Возраст ребёнка</label>
+          <select id="f-age" aria-label="Возраст ребёнка">
+            <option value="">Выберите возраст</option>
+            <option value="7">7 лет</option>
+            <option value="8">8 лет</option>
+            <option value="9">9 лет</option>
+            <option value="10">10 лет</option>
+            <option value="11">11 лет</option>
+          </select>
+        </div>
+        <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+          🎮 <span data-ru="Записаться на пробный урок →" data-kz="Сынақ сабаққа жазылу →">Записаться на пробный урок →</span>
+        </button>
+        <p class="form-note" data-ru="Бесплатная консультация · Без обязательств" data-kz="Тегін кеңес · Міндеттемесіз">Бесплатная консультация · Без обязательств</p>
+        <div class="proof">✅ <span data-ru="200+ учеников по Казахстану · Пробный без риска" data-kz="Қазақстан бойынша 200+ оқушы · Тәуекелсіз сынақ">200+ учеников по Казахстану · Пробный без риска</span></div>
+      </div>
+
+      <div class="success-msg" id="success-msg">
+        <div class="big">🎉</div>
+        <h3 data-ru="Заявка принята!" data-kz="Өтінім қабылданды!">Заявка принята!</h3>
+        <p data-ru="Свяжемся через WhatsApp в течение 30 минут." data-kz="30 минут ішінде WhatsApp арқылы байланысамыз.">Свяжемся через WhatsApp в течение 30 минут.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="why-list">
+    <h3 data-ru="Почему дети сами просят на урок 👇" data-kz="Неліктен балалар өздері сабаққа сұрайды 👇">Почему дети сами просят на урок 👇</h3>
+    <div class="why-item"><div class="icon">🎮</div><div><strong data-ru="Урок — это игра в Roblox" data-kz="Сабақ — Roblox ойыны">Урок — это игра в Roblox</strong><br><span data-ru="Ребёнок не замечает что учится" data-kz="Бала үйреніп жатқанын байқамайды">Ребёнок не замечает что учится</span></div></div>
+    <div class="why-item"><div class="icon">🗣️</div><div><strong data-ru="100% разговорный English" data-kz="100% сөйлеу ағылшынша">100% разговорный English</strong><br><span data-ru="Никаких учебников и зубрёжки" data-kz="Ешқандай оқулық пен жаттамау">Никаких учебников и зубрёжки</span></div></div>
+    <div class="why-item"><div class="icon">💻</div><div><strong data-ru="Онлайн из любого города" data-kz="Кез келген қаладан онлайн">Онлайн из любого города</strong><br><span data-ru="Алматы, Астана и весь Казахстан" data-kz="Алматы, Астана және бүкіл Қазақстан">Алматы, Астана и весь Казахстан</span></div></div>
+    <div class="why-item"><div class="icon">📈</div><div><strong data-ru="Результат за месяц" data-kz="Айда нәтиже">Результат за месяц</strong><br><span data-ru="После 4 занятий говорит простыми фразами" data-kz="4 сабақтан кейін қарапайым сөйлемдер айтады">После 4 занятий говорит простыми фразами</span></div></div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="reviews">
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a1">А</div>
+        <div><div class="review-name">Айгуль М.</div><div class="review-city" data-ru="Мама Данияра, 9 лет · Алматы" data-kz="Дәниярдың анасы, 9 жас · Алматы">Мама Данияра, 9 лет · Алматы</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Сын сам просит зайти на урок! Раньше воевали каждую неделю из-за английского."' data-kz='"Ұлым өзі сабаққа кіруді сұрайды! Бұрын ағылшын үшін соғыстық."'>"Сын сам просит зайти на урок! Раньше воевали каждую неделю из-за английского."</p>
+    </div>
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a2">С</div>
+        <div><div class="review-name">Серик Т.</div><div class="review-city" data-ru="Папа Алины, 8 лет · Астана" data-kz="Алинаның әкесі, 8 жас · Астана">Папа Алины, 8 лет · Астана</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"За 3 месяца дочка стала говорить простыми фразами. Смотрим мультики — она переводит!"' data-kz='"3 айда қызым қарапайым сөйлемдермен сөйлей бастады. Мультфильм — ол аударады!"'>"За 3 месяца дочка стала говорить простыми фразами. Смотрим мультики — она переводит!"</p>
+    </div>
+  </div>
+
+  <!-- WA -->
+  <a href="https://wa.me/77074569118" class="wa-btn" target="_blank" onclick="if(typeof fbq!=='undefined') fbq('track','Contact');">
+    💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span>
+  </a>
+
+</div>
+
+<a href="https://wa.me/77074569118" class="wa-float" target="_blank">💬</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const phone = document.getElementById("f-phone");
+  phone.addEventListener("input", function(e) {
+    let val = e.target.value.replace(/\D/g, "");
+    if (val.startsWith("8")) val = "7" + val.slice(1);
+    if (!val.startsWith("7")) val = "7" + val;
+    val = val.slice(0, 11);
+    let result = "+7";
+    if (val.length > 1) result += " (" + val.slice(1, 4);
+    if (val.length >= 4) result += ") " + val.slice(4, 7);
+    if (val.length >= 7) result += "-" + val.slice(7, 9);
+    if (val.length >= 9) result += "-" + val.slice(9, 11);
+    e.target.value = result;
+  });
+  phone.addEventListener("keydown", function(e) {
+    if (e.key === "Backspace" && e.target.value === "+7") e.preventDefault();
+  });
+  phone.addEventListener("focus", function() {
+    if (!this.value) this.value = "+7 ";
+  });
+});
+
+function getUTMParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || 'landing-b'
+  };
+}
+
+let currentLang = "ru";
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll("[data-ru]").forEach(el => {
+    const text = el.getAttribute("data-" + lang);
+    if (text) el.innerHTML = text;
+  });
+  document.querySelectorAll(".lang-btns button").forEach((btn, i) => {
+    btn.classList.toggle("active", (i === 0 && lang === "ru") || (i === 1 && lang === "kz"));
+  });
+}
+
+async function submitForm() {
+  const name = document.getElementById("f-name").value.trim();
+  const phone = document.getElementById("f-phone").value.trim();
+  const age = document.getElementById("f-age").value;
+
+  if (!name || !phone || !age) {
+    alert(currentLang === "ru" ? "Пожалуйста, заполните все поля" : "Барлық өрістерді толтырыңыз");
+    return;
+  }
+
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true;
+  btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
+
+  const utm = getUTMParams();
+
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'Пробный урок RobEng B', currency: 'KZT', value: 5000 });
+  }
+  gtag('event', 'generate_lead', { event_category: 'form', event_label: 'landing-b', value: 5000, currency: 'KZT' });
+  gtag_report_conversion();
+
+  fetch("https://flat-pond-6e68.uurraa.workers.dev/create-lead", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name, phone,
+      interest: "Английский язык (RobEng / Roblox)",
+      childAge: age,
+      source: utm.utm_source || "landing-b",
+      notes: `Лендинг B. Язык: ${currentLang.toUpperCase()}. UTM: ${JSON.stringify(utm)}`
+    })
+  }).catch(() => {});
+
+  document.getElementById("form-content").style.display = "none";
+  document.getElementById("success-msg").style.display = "block";
+
+  const msg = currentLang === "ru"
+    ? `Здравствуйте! Хочу записаться на пробный урок RobEng. Имя: ${name}, возраст ребёнка: ${age} лет. Телефон: ${phone}`
+    : `Сәлем! RobEng сынақ сабаққа жазылғым келеді. Аты: ${name}, баланың жасы: ${age}. Телефон: ${phone}`;
+
+  setTimeout(() => {
+    window.open(`https://wa.me/77074569118?text=${encodeURIComponent(msg)}`, "_blank");
+  }, 1000);
+}
+
+setLang("ru");
+</script>
+</body>
+</html>
