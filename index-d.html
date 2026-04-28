@@ -158,6 +158,30 @@ nav img { height: 34px; }
 .wa-float { position: fixed; bottom: 20px; right: 20px; z-index: 99; width: 52px; height: 52px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.5); animation: pulse 2.5s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5)} 50%{box-shadow:0 6px 36px rgba(37,211,102,0.75)} }
 
+/* DESKTOP */
+@media (min-width: 768px) {
+  .page { max-width: 1100px; display: grid; grid-template-columns: 1fr 420px; grid-template-rows: auto; column-gap: 40px; padding: 40px 24px; align-items: start; }
+  nav { padding: 12px 40px; }
+
+  /* Left column */
+  .hero { grid-column: 1; grid-row: 1; border-radius: 20px; text-align: left; padding: 36px 32px; }
+  .video-wrap { grid-column: 1; grid-row: 2; border-radius: 16px; overflow: hidden; }
+  .video-wrap iframe { aspect-ratio: 16/9; max-height: none; }
+  .video-label { grid-column: 1; grid-row: 3; border-radius: 0 0 16px 16px; margin-top: -4px; }
+  .why { grid-column: 1; grid-row: 4; border-radius: 16px; margin-top: 20px; }
+  .reviews { grid-column: 1; grid-row: 5; padding: 20px 0; }
+  .cta { grid-column: 1; grid-row: 6; padding: 0 0 20px; }
+  .footer-note { grid-column: 1 / -1; grid-row: 7; }
+
+  /* Right column - sticky form */
+  .urgency { grid-column: 2; grid-row: 1; border-radius: 20px 20px 0 0; position: sticky; top: 70px; z-index: 10; }
+  .form-card { grid-column: 2; grid-row: 2 / 6; border-radius: 0 0 20px 20px; border: 1.5px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: sticky; top: 106px; }
+
+  .reviews-grid-desktop { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .wa-float { bottom: 30px; right: 30px; }
+}
+
+
 .success-msg { display: none; text-align: center; padding: 20px; }
 .success-msg .big { font-size: 3rem; margin-bottom: 8px; }
 .success-msg h3 { font-family: "Comfortaa", sans-serif; font-size: 1.2rem; color: var(--green); margin-bottom: 6px; }
@@ -246,7 +270,7 @@ nav img { height: 34px; }
   </div>
 
   <!-- REVIEWS -->
-  <div class="reviews">
+  <div class="reviews"><div class="reviews-grid-desktop">
     <h2 data-ru="Что говорят родители наших учеников 👇" data-kz="Оқушыларымыздың ата-аналары не дейді 👇">Что говорят родители наших учеников 👇</h2>
 
     <div class="review">
@@ -314,7 +338,7 @@ nav img { height: 34px; }
       <span class="nps">NPS: 10 ⭐</span>
     </div>
 
-  </div>
+  </div></div>
 
   <!-- CTA -->
   <div class="cta">
