@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RobEng — Английский в Roblox для детей 7-11 лет</title>
+<meta name="description" content="Ребёнок не хочет учить английский? Посмотрите как проходит урок прямо в Roblox. Онлайн по Казахстану.">
+<link rel="preload" href="robeng-logo.png" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3NHNXLEW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FC3NHNXLEW');
+  gtag('config', 'AW-18061544039');
+  function gtag_report_conversion(url) {
+    var callback = function() { if (typeof(url) !== 'undefined') { window.location = url; } };
+    gtag('event', 'conversion', { send_to: 'AW-18061544039/ZF3wCLv0hJUcEOeUtaRD', value: 5.0, currency: 'USD', event_callback: callback });
+    return false;
+  }
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1489495452536302');
+fbq('track', 'PageView');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108926013','ym');
+    ym(108926013,'init',{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108926013" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --orange: #E65100; --orange-light: #FF9800; --orange-bg: #FFF3E0;
+  --green: #388E3C; --green-bg: #E8F5E9;
+  --dark: #1A1A2E; --text: #2c2c3a; --text2: #4a4a62;
+  --border: #E8E8F0; --bg: #FFFFFF; --wa: #25d366;
+}
+body { font-family: "Nunito", sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+nav {
+  background: white; border-bottom: 1px solid var(--border);
+  padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+nav img { height: 34px; }
+.lang-btns button {
+  background: none; border: 1.5px solid var(--border); color: var(--text2);
+  padding: 4px 12px; border-radius: 20px; cursor: pointer;
+  font-family: "Nunito", sans-serif; font-weight: 800; font-size: 0.8rem; margin-left: 6px;
+}
+.lang-btns button.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+.page { max-width: 500px; margin: 0 auto; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(160deg, #1A1A2E 0%, #16213E 100%);
+  color: white; padding: 32px 20px 28px; text-align: center;
+}
+.hero h1 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.25; margin-bottom: 10px;
+}
+.hero h1 .o { color: #FF9800; }
+.hero p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+/* VIDEO */
+.video-wrap {
+  position: relative; background: #000;
+  width: 100%;
+}
+.video-wrap iframe {
+  width: 100%; 
+  aspect-ratio: 9/16;
+  max-height: 480px;
+  display: block; border: none;
+}
+.video-label {
+  background: rgba(0,0,0,0.7);
+  color: white; text-align: center;
+  padding: 8px 16px; font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* FORM */
+.urgency {
+  background: linear-gradient(135deg, #C62828, #E65100);
+  color: white; text-align: center; padding: 10px;
+  font-size: 0.88rem; font-weight: 800;
+}
+.form-card { background: white; padding: 24px 20px; }
+.form-card h2 { font-family: "Comfortaa", sans-serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 4px; }
+.form-card .sub { font-size: 0.82rem; color: var(--text2); margin-bottom: 18px; line-height: 1.5; }
+
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 0.72rem; font-weight: 800; color: var(--text2); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input {
+  width: 100%; padding: 14px 16px;
+  background: #F8F9FF; border: 2px solid var(--border);
+  border-radius: 14px; color: var(--text);
+  font-family: "Nunito", sans-serif; font-size: 1rem; font-weight: 700;
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input:focus { border-color: var(--orange); background: white; }
+
+.btn-submit {
+  width: 100%; padding: 16px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  border: none; border-radius: 14px; color: white;
+  font-family: "Comfortaa", sans-serif; font-size: 1.1rem; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(230,81,0,0.35); margin-top: 4px;
+  transition: transform 0.2s;
+}
+.btn-submit:hover { transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.form-note { font-size: 0.73rem; color: var(--text2); text-align: center; margin-top: 8px; }
+.proof { display: flex; align-items: center; gap: 8px; background: var(--green-bg); border-radius: 10px; padding: 10px 12px; margin-top: 10px; font-size: 0.78rem; font-weight: 700; color: var(--green); }
+
+/* WHY */
+.why { padding: 24px 20px; background: #F8F9FF; }
+.why h2 { font-family: "Comfortaa", sans-serif; font-size: 1rem; color: var(--dark); margin-bottom: 14px; text-align: center; }
+.why-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.why-item .icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.why-item strong { display: block; font-size: 0.9rem; color: var(--dark); margin-bottom: 2px; }
+.why-item span { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
+
+/* REVIEWS */
+.reviews { padding: 20px; }
+.reviews h2 { font-family: "Comfortaa", sans-serif; font-size: 1rem; color: var(--dark); margin-bottom: 14px; text-align: center; }
+.review { background: white; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.review-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 900; color: white; flex-shrink: 0; }
+.a1 { background: linear-gradient(135deg, #E65100, #FF7043); }
+.a2 { background: linear-gradient(135deg, #388E3C, #00897B); }
+.a3 { background: linear-gradient(135deg, #5C6BC0, #7E57C2); }
+.a4 { background: linear-gradient(135deg, #0277BD, #0288D1); }
+.a5 { background: linear-gradient(135deg, #AD1457, #D81B60); }
+.review-name { font-weight: 800; font-size: 0.92rem; color: var(--dark); }
+.review-city { font-size: 0.72rem; color: var(--text2); }
+.stars { color: var(--orange-light); font-size: 0.85rem; margin-bottom: 6px; }
+.review p { font-size: 0.84rem; color: var(--text2); line-height: 1.65; font-style: italic; }
+.nps { display: inline-block; background: var(--green-bg); color: var(--green); font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
+
+/* CTA */
+.cta { padding: 20px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--wa); color: white; padding: 15px; border-radius: 14px; text-decoration: none; font-family: "Comfortaa", sans-serif; font-size: 1rem; font-weight: 700; box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+.footer-note { font-size: 0.72rem; color: var(--text2); text-align: center; padding: 12px 20px 30px; line-height: 1.6; }
+
+.wa-float { position: fixed; bottom: 20px; right: 20px; z-index: 99; width: 52px; height: 52px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.5); animation: pulse 2.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5)} 50%{box-shadow:0 6px 36px rgba(37,211,102,0.75)} }
+
+.success-msg { display: none; text-align: center; padding: 20px; }
+.success-msg .big { font-size: 3rem; margin-bottom: 8px; }
+.success-msg h3 { font-family: "Comfortaa", sans-serif; font-size: 1.2rem; color: var(--green); margin-bottom: 6px; }
+.success-msg p { font-size: 0.85rem; color: var(--text2); }
+</style>
+</head>
+<body>
+
+<nav>
+  <img width="51" height="34" fetchpriority="high" src="robeng-logo.png" alt="RobEng">
+  <div class="lang-btns">
+    <button class="active" onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('kz')">KZ</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>
+      <span data-ru="Ребёнок не хочет учить английский?" data-kz="Бала ағылшын тілін үйренгісі келмей ме?">Ребёнок не хочет учить английский?</span><br>
+      <span class="o" data-ru="Посмотрите как проходит урок 👇" data-kz="Сабақ қалай өтетінін көріңіз 👇">Посмотрите как проходит урок 👇</span>
+    </h1>
+    <p data-ru="Он думает что играет в Roblox — а на самом деле учит разговорный English с живым учителем" data-kz="Ол Roblox-та ойнап жатырмын деп ойлайды — ал шынында тірі мұғаліммен ағылшын тілін үйренеді">Он думает что играет в Roblox — а на самом деле учит разговорный English с живым учителем</p>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-wrap">
+    <iframe 
+      src="https://www.youtube.com/embed/FvOt_i1lsTA?rel=0&modestbranding=1" 
+      title="RobEng — Английский в Roblox"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-label">🎮 <span data-ru="Реальный урок английского внутри Roblox" data-kz="Roblox ішіндегі нақты ағылшын сабағы">Реальный урок английского внутри Roblox</span></div>
+
+  <!-- FORM -->
+  <div class="urgency">🔥 <span data-ru="Осталось 3 места на апрель!" data-kz="Сәуірге 3 орын қалды!">Осталось 3 места на апрель!</span></div>
+  <div class="form-card">
+    <h2 data-ru="🎯 Запишите ребёнка на пробный урок" data-kz="🎯 Баланы сынақ сабаққа жазыңыз">🎯 Запишите ребёнка на пробный урок</h2>
+    <p class="sub" data-ru="Оставьте номер — перезвоним в течение 30 минут и расскажем всё о занятиях" data-kz="Нөмірді қалдырыңыз — 30 минут ішінде қоңырау шалып, сабақтар туралы айтамыз">Оставьте номер — перезвоним в течение 30 минут и расскажем всё о занятиях</p>
+    <div id="form-content">
+      <div class="form-group">
+        <label data-ru="Ваш номер WhatsApp" data-kz="Сіздің WhatsApp нөміріңіз">Ваш номер WhatsApp</label>
+        <input type="tel" id="f-phone" placeholder="+7 (777) 000-00-00" maxlength="18">
+      </div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+        🎮 <span data-ru="Записаться на пробный урок →" data-kz="Сынақ сабаққа жазылу →">Записаться на пробный урок →</span>
+      </button>
+      <p class="form-note" data-ru="Без обязательств · Перезвоним сами" data-kz="Міндеттемесіз · Өзіміз қоңырау шаламыз">Без обязательств · Перезвоним сами</p>
+      <div class="proof">✅ <span data-ru="200+ учеников уже занимаются · Если не понравится — вернём деньги" data-kz="200+ оқушы оқып жатыр · Ұнамаса — ақшаны қайтарамыз">200+ учеников уже занимаются · Если не понравится — вернём деньги</span></div>
+    </div>
+    <div class="success-msg" id="success-msg">
+      <div class="big">🎉</div>
+      <h3 data-ru="Отлично! Ждите звонка" data-kz="Керемет! Қоңырауды күтіңіз">Отлично! Ждите звонка</h3>
+      <p data-ru="Перезвоним в течение 30 минут. Также открываем WhatsApp — можете написать сами." data-kz="30 минут ішінде қоңырау шаламыз. WhatsApp-ты ашамыз — өзіңіз жаза аласыз.">Перезвоним в течение 30 минут. Также открываем WhatsApp — можете написать сами.</p>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="why">
+    <h2 data-ru="Почему это работает 👇" data-kz="Бұл неліктен жұмыс істейді 👇">Почему это работает 👇</h2>
+    <div class="why-item">
+      <div class="icon">🎮</div>
+      <div>
+        <strong data-ru="Урок проходит прямо в Roblox" data-kz="Сабақ тікелей Roblox ішінде өтеді">Урок проходит прямо в Roblox</strong>
+        <span data-ru="Учитель заходит в игру вместе с ребёнком. Для ребёнка это игра — для вас урок English." data-kz="Мұғалім баламен бірге ойынға кіреді. Бала үшін ойын — сіз үшін ағылшын сабағы.">Учитель заходит в игру вместе с ребёнком. Для ребёнка это игра — для вас урок English.</span>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="icon">🗣️</div>
+      <div>
+        <strong data-ru="Только разговорный English" data-kz="Тек сөйлеу ағылшынша">Только разговорный English</strong>
+        <span data-ru="Никаких учебников и грамматики. Ребёнок говорит с первых занятий — как дети учат родной язык." data-kz="Ешқандай оқулық пен грамматика жоқ. Бала алғашқы сабақтардан сөйлейді.">Никаких учебников и грамматики. Ребёнок говорит с первых занятий — как дети учат родной язык.</span>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="icon">📍</div>
+      <div>
+        <strong data-ru="Онлайн из любого города Казахстана" data-kz="Қазақстанның кез келген қаласынан онлайн">Онлайн из любого города Казахстана</strong>
+        <span data-ru="Алматы, Астана и весь Казахстан. Нужен только интернет и Roblox." data-kz="Алматы, Астана және бүкіл Қазақстан. Тек интернет пен Roblox қажет.">Алматы, Астана и весь Казахстан. Нужен только интернет и Roblox.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="reviews">
+    <h2 data-ru="Что говорят родители наших учеников 👇" data-kz="Оқушыларымыздың ата-аналары не дейді 👇">Что говорят родители наших учеников 👇</h2>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a1">С</div>
+        <div>
+          <div class="review-name">Султан</div>
+          <div class="review-city" data-ru="Мама · Алматы" data-kz="Анасы · Алматы">Мама · Алматы</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Ребёнок сам знает когда нужно быть на уроке — а главное есть желание. Это самое важное!"' data-kz='"Бала өзі сабаққа қашан баруды біледі — ең бастысы тілек бар. Бұл ең маңыздысы!"'>"Ребёнок сам знает когда нужно быть на уроке — а главное есть желание. Это самое важное!"</p>
+      <span class="nps">NPS: 9 ⭐</span>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a2">Х</div>
+        <div>
+          <div class="review-name">Халид</div>
+          <div class="review-city" data-ru="Папа · Алматы" data-kz="Әкесі · Алматы">Папа · Алматы</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Ребёнок не отказывается учиться — и это уже победа. Раньше каждый урок был со скандалом."' data-kz='"Бала оқудан бас тартпайды — бұл жеңіс. Бұрын әр сабақ жанжалмен болды."'>"Ребёнок не отказывается учиться — и это уже победа. Раньше каждый урок был со скандалом."</p>
+      <span class="nps">NPS: 10 ⭐</span>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a3">Я</div>
+        <div>
+          <div class="review-name">Ян</div>
+          <div class="review-city" data-ru="Мама · Астана" data-kz="Анасы · Астана">Мама · Астана</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Английский подаётся непринуждённо в виде игры. Сын даже не замечает что учится!"' data-kz='"Ағылшын тілі ойын түрінде табиғи беріледі. Ұлым үйренгенін де байқамайды!"'>"Английский подаётся непринуждённо в виде игры. Сын даже не замечает что учится!"</p>
+      <span class="nps">NPS: 10 ⭐</span>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a4">Р</div>
+        <div>
+          <div class="review-name">Раяна</div>
+          <div class="review-city" data-ru="Мама · Алматы" data-kz="Анасы · Алматы">Мама · Алматы</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Игровая платформа, онлайн формат — дочери очень понравилось. Записались на следующий месяц!"' data-kz='"Ойын платформасы, онлайн формат — қызыма өте ұнады. Келесі айға жаздырдық!"'>"Игровая платформа, онлайн формат — дочери очень понравилось. Записались на следующий месяц!"</p>
+      <span class="nps">NPS: 10 ⭐</span>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="avatar a5">Ш</div>
+        <div>
+          <div class="review-name">Шахан</div>
+          <div class="review-city" data-ru="Папа · Алматы" data-kz="Әкесі · Алматы">Папа · Алматы</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p data-ru='"Ребёнок с удовольствием занимается. Для нас это главный показатель — значит будет результат."' data-kz='"Бала ықыласпен оқиды. Бізге бұл — басты көрсеткіш."'>"Ребёнок с удовольствием занимается. Для нас это главный показатель — значит будет результат."</p>
+      <span class="nps">NPS: 10 ⭐</span>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <a href="https://wa.me/77074569118" class="btn-wa" target="_blank" onclick="if(typeof fbq!=='undefined') fbq('track','Contact');">
+      💬 <span data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span>
+    </a>
+  </div>
+
+  <p class="footer-note" data-ru="RobEng · Первая в Казахстане школа английского внутри Roblox · Онлайн · Алматы · Астана · Дети 7-11 лет" data-kz="RobEng · Қазақстандағы алғашқы Roblox ішіндегі ағылшын мектебі · Онлайн · Алматы · Астана · 7-11 жас">RobEng · Первая в Казахстане школа английского внутри Roblox · Онлайн · Алматы · Астана · Дети 7-11 лет</p>
+
+</div>
+
+<a href="https://wa.me/77074569118" class="wa-float" target="_blank">💬</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const phone = document.getElementById("f-phone");
+  phone.addEventListener("input", function(e) {
+    let val = e.target.value.replace(/\D/g, "");
+    if (val.startsWith("8")) val = "7" + val.slice(1);
+    if (!val.startsWith("7")) val = "7" + val;
+    val = val.slice(0, 11);
+    let result = "+7";
+    if (val.length > 1) result += " (" + val.slice(1, 4);
+    if (val.length >= 4) result += ") " + val.slice(4, 7);
+    if (val.length >= 7) result += "-" + val.slice(7, 9);
+    if (val.length >= 9) result += "-" + val.slice(9, 11);
+    e.target.value = result;
+  });
+  phone.addEventListener("keydown", function(e) { if (e.key === "Backspace" && e.target.value === "+7") e.preventDefault(); });
+  phone.addEventListener("focus", function() { if (!this.value) this.value = "+7 "; });
+});
+
+function getUTMParams() {
+  const params = new URLSearchParams(window.location.search);
+  return { utm_source: params.get("utm_source") || "", utm_medium: params.get("utm_medium") || "", utm_campaign: params.get("utm_campaign") || "landing-d" };
+}
+
+let currentLang = "ru";
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll("[data-ru]").forEach(el => { const text = el.getAttribute("data-" + lang); if (text) el.innerHTML = text; });
+  document.querySelectorAll(".lang-btns button").forEach((btn, i) => { btn.classList.toggle("active", (i === 0 && lang === "ru") || (i === 1 && lang === "kz")); });
+}
+
+async function submitForm() {
+  const phone = document.getElementById("f-phone").value.trim();
+  if (!phone || phone.length < 16) {
+    alert(currentLang === "ru" ? "Пожалуйста, введите номер телефона" : "Телефон нөмірін енгізіңіз");
+    return;
+  }
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true;
+  btn.textContent = currentLang === "ru" ? "Отправляем..." : "Жіберілуде...";
+  const utm = getUTMParams();
+
+  if (typeof fbq !== "undefined") { fbq("track", "Lead", { content_name: "RobEng Landing D", currency: "KZT", value: 5000 }); }
+  if (typeof ym !== "undefined") { ym(108926013, "reachGoal", "form_submit"); }
+  gtag("event", "generate_lead", { event_category: "form", event_label: "landing-d", currency: "KZT" });
+  gtag_report_conversion();
+
+  fetch("https://flat-pond-6e68.uurraa.workers.dev/create-lead", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: "Не указано", phone,
+      interest: "Английский язык (RobEng / Roblox)",
+      childAge: "не указан",
+      source: utm.utm_source || "landing-d",
+      notes: `Лендинг D (видео + реальные отзывы). Язык: ${currentLang.toUpperCase()}. UTM: ${JSON.stringify(utm)}`
+    })
+  }).catch(() => {});
+
+  document.getElementById("form-content").style.display = "none";
+  document.getElementById("success-msg").style.display = "block";
+
+  const msg = currentLang === "ru"
+    ? `Здравствуйте! Хочу записаться на пробный урок RobEng. Телефон: ${phone}`
+    : `Сәлем! RobEng сынақ сабаққа жазылғым келеді. Телефон: ${phone}`;
+  setTimeout(() => { window.open(`https://wa.me/77074569118?text=${encodeURIComponent(msg)}`, "_blank"); }, 1000);
+}
+setLang("ru");
+</script>
+</body>
+</html>
